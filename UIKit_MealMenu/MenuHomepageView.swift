@@ -15,6 +15,8 @@ class MenuHomepageView: UIViewController {
         menu.configuration?.baseBackgroundColor = .systemGray2
         menu.configuration?.title = "Menu"
         
+        menu.addTarget(self, action: #selector(goToMenuDetail), for: .touchUpInside)
+        
         menu.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -22,6 +24,12 @@ class MenuHomepageView: UIViewController {
             menu.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             menu.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
         ])
+    }
+    
+    @objc func goToMenuDetail() {
+        let menuDetail = MenuDetailView()
+        menuDetail.title = "Menu Detail"
+        navigationController?.pushViewController(MenuDetailView(), animated: true)
     }
 }
 
