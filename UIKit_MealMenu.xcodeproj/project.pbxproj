@@ -15,6 +15,7 @@
 		2159F55F2D0091EF006DEAA7 /* UIKit_MealMenuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F55C2D0091EF006DEAA7 /* UIKit_MealMenuUITests.swift */; };
 		2159F5602D0091EF006DEAA7 /* UIKit_MealMenuUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F55D2D0091EF006DEAA7 /* UIKit_MealMenuUITestsLaunchTests.swift */; };
 		2159F5632D0091EF006DEAA7 /* UIKit_MealMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F5612D0091EF006DEAA7 /* UIKit_MealMenuTests.swift */; };
+		2159F5652D009592006DEAA7 /* MenuDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F5642D009592006DEAA7 /* MenuDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		2159F55C2D0091EF006DEAA7 /* UIKit_MealMenuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKit_MealMenuUITests.swift; sourceTree = "<group>"; };
 		2159F55D2D0091EF006DEAA7 /* UIKit_MealMenuUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKit_MealMenuUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2159F5612D0091EF006DEAA7 /* UIKit_MealMenuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKit_MealMenuTests.swift; sourceTree = "<group>"; };
+		2159F5642D009592006DEAA7 /* MenuDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				2159F54E2D0091E8006DEAA7 /* AppDelegate.swift */,
 				2159F5542D0091E8006DEAA7 /* SceneDelegate.swift */,
 				2159F5532D0091E8006DEAA7 /* MenuHomepageView.swift */,
+				2159F5642D009592006DEAA7 /* MenuDetailView.swift */,
 				2159F54F2D0091E8006DEAA7 /* Assets.xcassets */,
 				2159F5502D0091E8006DEAA7 /* Info.plist */,
 				2159F5522D0091E8006DEAA7 /* LaunchScreen.storyboard */,
@@ -263,6 +266,7 @@
 			files = (
 				2159F5562D0091E8006DEAA7 /* AppDelegate.swift in Sources */,
 				2159F5572D0091E8006DEAA7 /* MenuHomepageView.swift in Sources */,
+				2159F5652D009592006DEAA7 /* MenuDetailView.swift in Sources */,
 				2159F5582D0091E8006DEAA7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
