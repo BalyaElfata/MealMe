@@ -1,8 +1,6 @@
 import UIKit
 
-class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    let menu = UIButton()
-    let menuImage = UIImageView()
+class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {    let menuImage = UIImageView()
     let menuName = UILabel()
     let menuLabel = UILabel()
     
@@ -18,26 +16,7 @@ class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollecti
         view.backgroundColor = .systemBackground
         title = "Menu"
         navigationController?.navigationBar.prefersLargeTitles = true
-        setupMenu()
         setupCollectionView()
-    }
-    
-    func setupMenu() {
-        view.addSubview(menu)
-        
-        menu.configuration = .filled()
-        menu.configuration?.baseBackgroundColor = .systemGray2
-        menu.configuration?.title = "Menu"
-        
-        menu.addTarget(self, action: #selector(goToMenuDetail), for: .touchUpInside)
-        
-        menu.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            menu.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            menu.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            menu.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
-        ])
     }
     
     func setupCollectionView() {
@@ -50,7 +29,7 @@ class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollecti
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: menu.bottomAnchor, constant: 10),
+            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
             collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
             collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
