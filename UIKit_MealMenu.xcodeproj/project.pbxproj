@@ -6,6 +6,17 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2159F5562D0091E8006DEAA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F54E2D0091E8006DEAA7 /* AppDelegate.swift */; };
+		2159F5572D0091E8006DEAA7 /* MenuHomepageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F5532D0091E8006DEAA7 /* MenuHomepageView.swift */; };
+		2159F5582D0091E8006DEAA7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F5542D0091E8006DEAA7 /* SceneDelegate.swift */; };
+		2159F5592D0091E8006DEAA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2159F54F2D0091E8006DEAA7 /* Assets.xcassets */; };
+		2159F55B2D0091E8006DEAA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2159F5522D0091E8006DEAA7 /* LaunchScreen.storyboard */; };
+		2159F55F2D0091EF006DEAA7 /* UIKit_MealMenuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F55C2D0091EF006DEAA7 /* UIKit_MealMenuUITests.swift */; };
+		2159F5602D0091EF006DEAA7 /* UIKit_MealMenuUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F55D2D0091EF006DEAA7 /* UIKit_MealMenuUITestsLaunchTests.swift */; };
+		2159F5632D0091EF006DEAA7 /* UIKit_MealMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F5612D0091EF006DEAA7 /* UIKit_MealMenuTests.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		2159F5312D008FBC006DEAA7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,38 +38,16 @@
 		2159F51A2D008FBA006DEAA7 /* UIKit_MealMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKit_MealMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2159F5302D008FBC006DEAA7 /* UIKit_MealMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIKit_MealMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2159F53A2D008FBC006DEAA7 /* UIKit_MealMenuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIKit_MealMenuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2159F54E2D0091E8006DEAA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2159F54F2D0091E8006DEAA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2159F5502D0091E8006DEAA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2159F5512D0091E8006DEAA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2159F5532D0091E8006DEAA7 /* MenuHomepageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHomepageView.swift; sourceTree = "<group>"; };
+		2159F5542D0091E8006DEAA7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		2159F55C2D0091EF006DEAA7 /* UIKit_MealMenuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKit_MealMenuUITests.swift; sourceTree = "<group>"; };
+		2159F55D2D0091EF006DEAA7 /* UIKit_MealMenuUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKit_MealMenuUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2159F5612D0091EF006DEAA7 /* UIKit_MealMenuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKit_MealMenuTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		2159F5422D008FBC006DEAA7 /* Exceptions for "UIKit_MealMenu" folder in "UIKit_MealMenu" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 2159F5192D008FBA006DEAA7 /* UIKit_MealMenu */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		2159F51C2D008FBA006DEAA7 /* UIKit_MealMenu */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				2159F5422D008FBC006DEAA7 /* Exceptions for "UIKit_MealMenu" folder in "UIKit_MealMenu" target */,
-			);
-			path = UIKit_MealMenu;
-			sourceTree = "<group>";
-		};
-		2159F5332D008FBC006DEAA7 /* UIKit_MealMenuTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = UIKit_MealMenuTests;
-			sourceTree = "<group>";
-		};
-		2159F53D2D008FBC006DEAA7 /* UIKit_MealMenuUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = UIKit_MealMenuUITests;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		2159F5172D008FBA006DEAA7 /* Frameworks */ = {
@@ -88,9 +77,9 @@
 		2159F5112D008FBA006DEAA7 = {
 			isa = PBXGroup;
 			children = (
-				2159F51C2D008FBA006DEAA7 /* UIKit_MealMenu */,
-				2159F5332D008FBC006DEAA7 /* UIKit_MealMenuTests */,
-				2159F53D2D008FBC006DEAA7 /* UIKit_MealMenuUITests */,
+				2159F5552D0091E8006DEAA7 /* UIKit_MealMenu */,
+				2159F5622D0091EF006DEAA7 /* UIKit_MealMenuTests */,
+				2159F55E2D0091EF006DEAA7 /* UIKit_MealMenuUITests */,
 				2159F51B2D008FBA006DEAA7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,6 +92,36 @@
 				2159F53A2D008FBC006DEAA7 /* UIKit_MealMenuUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		2159F5552D0091E8006DEAA7 /* UIKit_MealMenu */ = {
+			isa = PBXGroup;
+			children = (
+				2159F54E2D0091E8006DEAA7 /* AppDelegate.swift */,
+				2159F5532D0091E8006DEAA7 /* MenuHomepageView.swift */,
+				2159F5542D0091E8006DEAA7 /* SceneDelegate.swift */,
+				2159F54F2D0091E8006DEAA7 /* Assets.xcassets */,
+				2159F5502D0091E8006DEAA7 /* Info.plist */,
+				2159F5522D0091E8006DEAA7 /* LaunchScreen.storyboard */,
+			);
+			path = UIKit_MealMenu;
+			sourceTree = "<group>";
+		};
+		2159F55E2D0091EF006DEAA7 /* UIKit_MealMenuUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2159F55C2D0091EF006DEAA7 /* UIKit_MealMenuUITests.swift */,
+				2159F55D2D0091EF006DEAA7 /* UIKit_MealMenuUITestsLaunchTests.swift */,
+			);
+			path = UIKit_MealMenuUITests;
+			sourceTree = "<group>";
+		};
+		2159F5622D0091EF006DEAA7 /* UIKit_MealMenuTests */ = {
+			isa = PBXGroup;
+			children = (
+				2159F5612D0091EF006DEAA7 /* UIKit_MealMenuTests.swift */,
+			);
+			path = UIKit_MealMenuTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,9 +138,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				2159F51C2D008FBA006DEAA7 /* UIKit_MealMenu */,
 			);
 			name = UIKit_MealMenu;
 			packageProductDependencies = (
@@ -143,9 +159,6 @@
 			dependencies = (
 				2159F5322D008FBC006DEAA7 /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				2159F5332D008FBC006DEAA7 /* UIKit_MealMenuTests */,
-			);
 			name = UIKit_MealMenuTests;
 			packageProductDependencies = (
 			);
@@ -165,9 +178,6 @@
 			);
 			dependencies = (
 				2159F53C2D008FBC006DEAA7 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				2159F53D2D008FBC006DEAA7 /* UIKit_MealMenuUITests */,
 			);
 			name = UIKit_MealMenuUITests;
 			packageProductDependencies = (
@@ -225,6 +235,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2159F5592D0091E8006DEAA7 /* Assets.xcassets in Resources */,
+				2159F55B2D0091E8006DEAA7 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +261,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2159F5562D0091E8006DEAA7 /* AppDelegate.swift in Sources */,
+				2159F5572D0091E8006DEAA7 /* MenuHomepageView.swift in Sources */,
+				2159F5582D0091E8006DEAA7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2159F5632D0091EF006DEAA7 /* UIKit_MealMenuTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +279,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2159F55F2D0091EF006DEAA7 /* UIKit_MealMenuUITests.swift in Sources */,
+				2159F5602D0091EF006DEAA7 /* UIKit_MealMenuUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +298,17 @@
 			targetProxy = 2159F53B2D008FBC006DEAA7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2159F5522D0091E8006DEAA7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2159F5512D0091E8006DEAA7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2159F5442D008FBC006DEAA7 /* Debug */ = {
