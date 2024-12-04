@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController {
+class MenuHomepageView: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
