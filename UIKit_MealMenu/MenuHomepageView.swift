@@ -77,7 +77,6 @@ class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollecti
     
     @objc func goToMenuDetail() {
         let menuDetail = MenuDetailView()
-        menuDetail.title = "Menu Detail"
         navigationController?.pushViewController(menuDetail, animated: true)
     }
 }
