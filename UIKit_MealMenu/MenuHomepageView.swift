@@ -5,6 +5,9 @@ class MenuHomepageView: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
+        title = "Menu"
+        navigationController?.navigationBar.prefersLargeTitles = true
         setupMenu()
     }
     
