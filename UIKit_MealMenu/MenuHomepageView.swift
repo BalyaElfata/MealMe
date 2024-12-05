@@ -1,6 +1,7 @@
 import UIKit
 
-class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {    let menuImage = UIImageView()
+class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    let menuImage = UIImageView()
     let menuName = UILabel()
     let menuLabel = UILabel()
     var menuData: [Menu] = []
@@ -66,12 +67,12 @@ class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollecti
         // Configure the menuImage
 //        menuImage.image = UIImage(systemNad(equalToConstant: 80).isActive = true // Example size
         
-        let menuList = menuData[indexPath.row]
+        let menu = menuData[indexPath.row]
 //        cell.textLabel?.text = menu.name
 //        cell.detailTextLabel?.text = menu.label
         
         let menuImage = UIImageView()
-        if let url = URL(string: menuList.image) {
+        if let url = URL(string: menu.image) {
             DispatchQueue.global().async {
                 if let data = try? Data(contentsOf: url) {
                     if let image = UIImage(data: data) {
@@ -86,14 +87,14 @@ class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollecti
         // Configure the menuName
         let menuName = UILabel()
 //        menuName.text = "Menu \(indexPath.item + 1)"
-        menuName.text = menuList.name
+        menuName.text = menu.name
         menuName.font = UIFont.boldSystemFont(ofSize: 16)
         menuName.textAlignment = .center
         
         // Configure the menuLabel
         let menuLabel = UILabel()
 //        menuLabel.text = "Description for Menu \(indexPath.item + 1)"
-        menuLabel.text = menuList.label
+        menuLabel.text = menu.label
         menuLabel.font = UIFont.systemFont(ofSize: 14)
         menuLabel.textColor = .gray
         menuLabel.textAlignment = .center
