@@ -59,17 +59,11 @@ class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollecti
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         
-        // Clear previous content to prevent duplication
         for subview in cell.contentView.subviews {
             subview.removeFromSuperview()
         }
         
-        // Configure the menuImage
-//        menuImage.image = UIImage(systemNad(equalToConstant: 80).isActive = true // Example size
-        
         let menu = menuData[indexPath.row]
-//        cell.textLabel?.text = menu.name
-//        cell.detailTextLabel?.text = menu.label
         
         let menuImage = UIImageView()
         if let url = URL(string: menu.image) {
@@ -84,33 +78,26 @@ class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollecti
             }
         }
         
-        // Configure the menuName
         let menuName = UILabel()
-//        menuName.text = "Menu \(indexPath.item + 1)"
         menuName.text = menu.name
         menuName.font = UIFont.boldSystemFont(ofSize: 16)
         menuName.textAlignment = .center
         
-        // Configure the menuLabel
         let menuLabel = UILabel()
-//        menuLabel.text = "Description for Menu \(indexPath.item + 1)"
         menuLabel.text = menu.label
         menuLabel.font = UIFont.systemFont(ofSize: 14)
         menuLabel.textColor = .gray
         menuLabel.textAlignment = .center
         menuLabel.numberOfLines = 2
         
-        // Create a vertical stack view
         let stackView = UIStackView(arrangedSubviews: [menuImage, menuName, menuLabel])
         stackView.axis = .vertical
         stackView.spacing = 8
         stackView.alignment = .center
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
-        // Add stack view to the cell's contentView
         cell.contentView.addSubview(stackView)
         
-        // Set constraints for the stack view
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 8),
             stackView.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor, constant: 8),
@@ -118,7 +105,6 @@ class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollecti
             stackView.bottomAnchor.constraint(lessThanOrEqualTo: cell.contentView.bottomAnchor, constant: -8)
         ])
         
-        // Add border and corner radius to the cell
         cell.contentView.layer.cornerRadius = 8
         cell.contentView.layer.masksToBounds = true
         cell.contentView.layer.borderColor = UIColor.systemGray4.cgColor
@@ -139,7 +125,6 @@ class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollecti
     
     // MARK: - UICollectionViewDelegate Method
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // Navigate to a different view controller based on indexPath.item
         let selectedMenu = menuData[indexPath.item]
         var destinationViewController: UIViewController
         

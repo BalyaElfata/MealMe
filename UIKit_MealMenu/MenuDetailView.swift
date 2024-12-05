@@ -1,7 +1,6 @@
 import UIKit
 
 class MenuDetailView: UIViewController {
-//    var item: Int = 1
     var menu: Menu?
     
     override func viewDidLoad() {
@@ -27,7 +26,6 @@ class MenuDetailView: UIViewController {
         ])
     }
     
-    // Convenience initializer for setting the item
     convenience init(menu: Menu?) {
         self.init()
         self.menu = menu
