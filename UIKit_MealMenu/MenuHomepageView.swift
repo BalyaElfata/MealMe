@@ -140,10 +140,10 @@ class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollecti
     // MARK: - UICollectionViewDelegate Method
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // Navigate to a different view controller based on indexPath.item
-        let selectedItem = indexPath.item + 1
+        let selectedMenu = menuData[indexPath.item]
         var destinationViewController: UIViewController
         
-        destinationViewController = MenuDetailView(item: selectedItem)
+        destinationViewController = MenuDetailView(menu: selectedMenu)
         
         navigationController?.pushViewController(destinationViewController, animated: true)
     }

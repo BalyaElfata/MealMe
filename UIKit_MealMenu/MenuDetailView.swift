@@ -1,7 +1,8 @@
 import UIKit
 
 class MenuDetailView: UIViewController {
-    var item: Int = 1
+//    var item: Int = 1
+    var menu: Menu?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -12,7 +13,7 @@ class MenuDetailView: UIViewController {
     
     func setupMenuDescription() {
         let menuDescription = UILabel()
-        menuDescription.text = "Menu \(item)"
+        menuDescription.text = menu?.name
         menuDescription.font = UIFont.boldSystemFont(ofSize: 16)
         menuDescription.textAlignment = .center
         menuDescription.translatesAutoresizingMaskIntoConstraints = false
@@ -27,8 +28,8 @@ class MenuDetailView: UIViewController {
     }
     
     // Convenience initializer for setting the item
-    convenience init(item: Int) {
+    convenience init(menu: Menu?) {
         self.init()
-        self.item = item
+        self.menu = menu
     }
 }
