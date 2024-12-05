@@ -3,6 +3,7 @@ import UIKit
 class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {    let menuImage = UIImageView()
     let menuName = UILabel()
     let menuLabel = UILabel()
+    var menuData: [Menu] = []
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -17,6 +18,19 @@ class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollecti
         title = "Menu"
         navigationController?.navigationBar.prefersLargeTitles = true
         setupCollectionView()
+        
+        Task {
+            do {
+                let menuService = MenuService()
+                let data = try await menuService.getMenus()
+                self.menuData = data.meals
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            } catch {
+                print("Failed to fetch data: \(error)")
+            }
+        }
     }
     
     func setupCollectionView() {
@@ -38,7 +52,7 @@ class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollecti
     
     // MARK: - UICollectionViewDataSource Methods
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return menuData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -50,21 +64,36 @@ class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollecti
         }
         
         // Configure the menuImage
+//        menuImage.image = UIImage(systemNad(equalToConstant: 80).isActive = true // Example size
+        
+        let menuList = menuData[indexPath.row]
+//        cell.textLabel?.text = menu.name
+//        cell.detailTextLabel?.text = menu.label
+        
         let menuImage = UIImageView()
-        menuImage.image = UIImage(systemName: "photo") // Example image
-        menuImage.contentMode = .scaleAspectFit
-        menuImage.translatesAutoresizingMaskIntoConstraints = false
-        menuImage.heightAnchor.constraint(equalToConstant: 80).isActive = true // Example size
+        if let url = URL(string: menuList.image) {
+            DispatchQueue.global().async {
+                if let data = try? Data(contentsOf: url) {
+                    if let image = UIImage(data: data) {
+                        DispatchQueue.main.async {
+                            menuImage.image = image
+                        }
+                    }
+                }
+            }
+        }
         
         // Configure the menuName
         let menuName = UILabel()
-        menuName.text = "Menu \(indexPath.item + 1)"
+//        menuName.text = "Menu \(indexPath.item + 1)"
+        menuName.text = menuList.name
         menuName.font = UIFont.boldSystemFont(ofSize: 16)
         menuName.textAlignment = .center
         
         // Configure the menuLabel
         let menuLabel = UILabel()
-        menuLabel.text = "Description for Menu \(indexPath.item + 1)"
+//        menuLabel.text = "Description for Menu \(indexPath.item + 1)"
+        menuLabel.text = menuList.label
         menuLabel.font = UIFont.systemFont(ofSize: 14)
         menuLabel.textColor = .gray
         menuLabel.textAlignment = .center
@@ -116,10 +145,5 @@ class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollecti
         destinationViewController = MenuDetailView(item: selectedItem)
         
         navigationController?.pushViewController(destinationViewController, animated: true)
-    }
-    
-    @objc func goToMenuDetail() {
-        let menuDetail = MenuDetailView()
-        navigationController?.pushViewController(menuDetail, animated: true)
     }
 }
