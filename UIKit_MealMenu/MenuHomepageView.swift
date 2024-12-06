@@ -119,8 +119,9 @@ class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollecti
         let padding: CGFloat = 10
         let totalPadding = padding * (itemsPerRow - 1)
         let availableWidth = collectionView.frame.width - totalPadding
+        let itemHeight = UIScreen.main.bounds.size.height * 0.3
         let itemWidth = availableWidth / itemsPerRow
-        return CGSize(width: itemWidth, height: itemWidth)
+        return CGSize(width: itemWidth, height: itemHeight)
     }
     
     // MARK: - UICollectionViewDelegate Method
