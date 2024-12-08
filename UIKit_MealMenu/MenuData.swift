@@ -12,6 +12,7 @@ struct Menu: Codable {
         case image = "strMealThumb"
         case ingredients = "strIngredient1"
         case instructions = "strInstructions"
+        case youtubeLink = "strYoutube"
     }
     
     var name: String
@@ -19,6 +20,7 @@ struct Menu: Codable {
     var image: String
     var ingredients: String
     var instructions: String
+    var youtubeLink: String
     
     init(from menuData: MenuData) {
         self.name = menuData.meals.first?.name ?? ""
@@ -26,5 +28,6 @@ struct Menu: Codable {
         self.image = menuData.meals.first?.image ?? ""
         self.ingredients = menuData.meals.first?.ingredients ?? ""
         self.instructions = menuData.meals.first?.instructions ?? ""
+        self.youtubeLink = menuData.meals.first?.youtubeLink ?? ""
     }
 }
