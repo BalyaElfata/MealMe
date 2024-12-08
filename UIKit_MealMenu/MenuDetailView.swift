@@ -4,7 +4,11 @@ class MenuDetailView: UIViewController {
     var menu: Menu?
     let scrollView = UIScrollView()
     let contentView = UIView()
+    
     var menuImage: UIImageView = UIImageView(image: UIImage(systemName: "photo"))
+    var menuLabel: UILabel = UILabel()
+    let menuIngredientsTitle = UILabel()
+    let menuIngredients = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,8 +19,7 @@ class MenuDetailView: UIViewController {
         setupScrollView()
         setupMenuImage()
         setupMenuLabel()
-        
-        contentView.addSubview(UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 1000)))
+        setupMenuIngredients()
     }
     
     func setupScrollView() {
@@ -69,7 +72,6 @@ class MenuDetailView: UIViewController {
     }
     
     func setupMenuLabel() {
-        let menuLabel = UILabel()
         menuLabel.text = menu?.label
         menuLabel.font = UIFont.boldSystemFont(ofSize: 16)
         menuLabel.textAlignment = .left
@@ -84,6 +86,31 @@ class MenuDetailView: UIViewController {
         ])
     }
     
+    func setupMenuIngredients() {
+        menuIngredientsTitle.text = "Ingredients"
+        menuIngredientsTitle.font = UIFont.boldSystemFont(ofSize: 16)
+        menuIngredientsTitle.textAlignment = .left
+        menuIngredientsTitle.translatesAutoresizingMaskIntoConstraints = false
+        
+        menuIngredients.text = menu?.ingredients
+        menuIngredients.font = UIFont.boldSystemFont(ofSize: 16)
+        menuIngredients.textAlignment = .left
+        menuIngredients.translatesAutoresizingMaskIntoConstraints = false
+        
+        contentView.addSubview(menuIngredientsTitle)
+        contentView.addSubview(menuIngredients)
+        
+        NSLayoutConstraint.activate([
+            menuIngredientsTitle.topAnchor.constraint(equalTo: menuLabel.bottomAnchor, constant: 10),
+            menuIngredientsTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            menuIngredientsTitle.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            
+            menuIngredients.topAnchor.constraint(equalTo: menuIngredientsTitle.bottomAnchor, constant: 0),
+            menuIngredients.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            menuIngredients.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20)
+        ])
+    }
+
     convenience init(menu: Menu?) {
         self.init()
         self.menu = menu
