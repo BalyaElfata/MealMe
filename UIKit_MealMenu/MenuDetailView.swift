@@ -80,8 +80,7 @@ class MenuDetailView: UIViewController {
         NSLayoutConstraint.activate([
             menuLabel.topAnchor.constraint(equalTo: menuImage.bottomAnchor, constant: 10),
             menuLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            menuLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            menuLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20)
+            menuLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20)
         ])
     }
     
