@@ -12,7 +12,7 @@ class MenuDetailView: UIViewController {
     }
     
     func setupMenuImage() {
-        menuImage.contentMode = .scaleAspectFill
+        menuImage.contentMode = .scaleAspectFit
         menuImage.translatesAutoresizingMaskIntoConstraints = false
         
         if let imageURL = menu?.image, let url = URL(string: imageURL) {
@@ -30,10 +30,10 @@ class MenuDetailView: UIViewController {
         view.addSubview(menuImage)
         
         NSLayoutConstraint.activate([
-            menuImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-            menuImage.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            menuImage.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            menuImage.heightAnchor.constraint(equalToConstant: 200)
+            menuImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
+            menuImage.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0),
+            menuImage.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0),
+            menuImage.heightAnchor.constraint(equalTo: menuImage.widthAnchor)
         ])
     }
     
