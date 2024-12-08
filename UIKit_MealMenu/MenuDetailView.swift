@@ -6,7 +6,6 @@ class MenuDetailView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Menu Detail"
         view.backgroundColor = .systemBackground
         setupMenuImage()
         setupMenuDescription()
@@ -17,7 +16,6 @@ class MenuDetailView: UIViewController {
         menuImage.translatesAutoresizingMaskIntoConstraints = false
         
         if let imageURL = menu?.image, let url = URL(string: imageURL) {
-            // Load image from URL
             DispatchQueue.global().async {
                 if let data = try? Data(contentsOf: url) {
                     if let image = UIImage(data: data) {
