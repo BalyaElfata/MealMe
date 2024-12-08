@@ -81,7 +81,7 @@ class MenuDetailView: UIViewController {
     }
     
     func setupMenuLabel() {
-        menuLabelContainer.backgroundColor = .lightGray
+        menuLabelContainer.backgroundColor = .systemGray3
         menuLabelContainer.layer.cornerRadius = 16
         menuLabelContainer.layer.masksToBounds = true
         menuLabelContainer.translatesAutoresizingMaskIntoConstraints = false
