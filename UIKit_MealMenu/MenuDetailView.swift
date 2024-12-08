@@ -6,6 +6,8 @@ class MenuDetailView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = menu?.name
+        navigationItem.largeTitleDisplayMode = .never
         view.backgroundColor = .systemBackground
         setupMenuImage()
         setupMenuDescription()
