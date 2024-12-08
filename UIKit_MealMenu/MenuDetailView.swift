@@ -146,16 +146,24 @@ class MenuDetailView: UIViewController {
     }
     
     func setupMenuLink() {
-        menuLinkButton.setTitle("Available on the YouTube", for: .normal)
-        menuLinkButton.setTitleColor(.black, for: .normal)
-        menuLinkButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
-        menuLinkButton.setImage(UIImage(systemName: "play.rectangle.fill"), for: .normal)
-        menuLinkButton.tintColor = .red
+        let textHeight: CGFloat = UIFont.boldSystemFont(ofSize: 16).lineHeight
+        let resizedIcon = UIGraphicsImageRenderer(size: CGSize(width: textHeight, height: textHeight)).image { _ in
+            youtubeIcon?.draw(in: CGRect(origin: .zero, size: CGSize(width: textHeight, height: textHeight)))
+        }
+        
+        var menuButtonConfiguration = UIButton.Configuration.plain()
+        menuButtonConfiguration.attributedTitle = AttributedString(
+            "Available on the YouTube",
+            attributes: AttributeContainer([.font: UIFont.boldSystemFont(ofSize: 16)]))
+        menuButtonConfiguration.baseForegroundColor = .black
+        menuButtonConfiguration.image = resizedIcon
+        menuButtonConfiguration.imagePadding = 8
+        menuButtonConfiguration.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+        menuLinkButton.configuration = menuButtonConfiguration
         menuLinkButton.imageView?.contentMode = .scaleAspectFit
         menuLinkButton.contentHorizontalAlignment = .trailing
         
         menuLinkButton.semanticContentAttribute = .forceRightToLeft
-        menuLinkButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0)
 
         menuLinkButton.translatesAutoresizingMaskIntoConstraints = false
 
