@@ -10,7 +10,7 @@ class MenuDetailView: UIViewController {
         navigationItem.largeTitleDisplayMode = .never
         view.backgroundColor = .systemBackground
         setupMenuImage()
-        setupMenuDescription()
+        setupMenuLabel()
     }
     
     func setupMenuImage() {
@@ -39,19 +39,19 @@ class MenuDetailView: UIViewController {
         ])
     }
     
-    func setupMenuDescription() {
-        let menuDescription = UILabel()
-        menuDescription.text = menu?.name
-        menuDescription.font = UIFont.boldSystemFont(ofSize: 16)
-        menuDescription.textAlignment = .center
-        menuDescription.translatesAutoresizingMaskIntoConstraints = false
+    func setupMenuLabel() {
+        let menuLabel = UILabel()
+        menuLabel.text = menu?.label
+        menuLabel.font = UIFont.boldSystemFont(ofSize: 16)
+        menuLabel.textAlignment = .left
+        menuLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        view.addSubview(menuDescription)
+        view.addSubview(menuLabel)
         
         NSLayoutConstraint.activate([
-            menuDescription.topAnchor.constraint(equalTo: menuImage.bottomAnchor, constant: 10),
-            menuDescription.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            menuDescription.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
+            menuLabel.topAnchor.constraint(equalTo: menuImage.bottomAnchor, constant: 10),
+            menuLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            menuLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
         ])
     }
     
