@@ -17,7 +17,6 @@ class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollecti
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         title = "Menu"
-        navigationController?.navigationBar.prefersLargeTitles = true
         setupCollectionView()
         
         Task {
