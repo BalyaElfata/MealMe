@@ -9,6 +9,8 @@ class MenuDetailView: UIViewController {
     var menuLabel: UILabel = UILabel()
     let menuIngredientsTitle = UILabel()
     let menuIngredients = UILabel()
+    let menuInstructionsTitle = UILabel()
+    let menuInstructions = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,7 @@ class MenuDetailView: UIViewController {
         setupMenuImage()
         setupMenuLabel()
         setupMenuIngredients()
+        setupMenuInstructions()
     }
     
     func setupScrollView() {
@@ -108,6 +111,33 @@ class MenuDetailView: UIViewController {
             menuIngredients.topAnchor.constraint(equalTo: menuIngredientsTitle.bottomAnchor, constant: 0),
             menuIngredients.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             menuIngredients.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20)
+        ])
+    }
+    
+    func setupMenuInstructions() {
+        menuInstructionsTitle.text = "Instructions"
+        menuInstructionsTitle.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        menuInstructionsTitle.textAlignment = .left
+        menuInstructionsTitle.translatesAutoresizingMaskIntoConstraints = false
+        
+        menuInstructions.text = menu?.instructions
+        menuInstructions.numberOfLines = 0
+        menuInstructions.font = UIFont.systemFont(ofSize: 14)
+        menuInstructions.textAlignment = .left
+        menuInstructions.translatesAutoresizingMaskIntoConstraints = false
+        
+        contentView.addSubview(menuInstructionsTitle)
+        contentView.addSubview(menuInstructions)
+        
+        NSLayoutConstraint.activate([
+            menuInstructionsTitle.topAnchor.constraint(equalTo: menuIngredients.bottomAnchor, constant: 10),
+            menuInstructionsTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            menuInstructionsTitle.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            
+            menuInstructions.topAnchor.constraint(equalTo: menuInstructionsTitle.bottomAnchor, constant: 0),
+            menuInstructions.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            menuInstructions.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            menuInstructions.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20)
         ])
     }
 
