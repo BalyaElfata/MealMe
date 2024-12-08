@@ -11,6 +11,10 @@ class MenuDetailView: UIViewController {
     let menuIngredients = UILabel()
     let menuInstructionsTitle = UILabel()
     let menuInstructions = UILabel()
+    let menuLinkStackView: UIStackView = UIStackView()
+    let menuLinkLabel: UILabel = UILabel()
+    let menuLinkButton: UIButton = UIButton()
+    let youtubeIcon: UIImage? = UIImage(named: "youtubeIcon")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +27,7 @@ class MenuDetailView: UIViewController {
         setupMenuLabel()
         setupMenuIngredients()
         setupMenuInstructions()
+        setupMenuLink()
     }
     
     func setupScrollView() {
@@ -136,9 +141,40 @@ class MenuDetailView: UIViewController {
             
             menuInstructions.topAnchor.constraint(equalTo: menuInstructionsTitle.bottomAnchor, constant: 0),
             menuInstructions.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            menuInstructions.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            menuInstructions.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20)
+            menuInstructions.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20)
         ])
+    }
+    
+    func setupMenuLink() {
+        menuLinkButton.setTitle("Available on the YouTube", for: .normal)
+        menuLinkButton.setTitleColor(.black, for: .normal)
+        menuLinkButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        menuLinkButton.setImage(UIImage(systemName: "play.rectangle.fill"), for: .normal)
+        menuLinkButton.tintColor = .red
+        menuLinkButton.imageView?.contentMode = .scaleAspectFit
+        menuLinkButton.contentHorizontalAlignment = .trailing
+        
+        let spacing: CGFloat = 8
+        menuLinkButton.semanticContentAttribute = .forceRightToLeft
+        menuLinkButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: spacing, bottom: 0, right: 0)
+
+        menuLinkButton.translatesAutoresizingMaskIntoConstraints = false
+
+        menuLinkButton.addTarget(self, action: #selector(menuLinkButtonTapped), for: .touchUpInside)
+
+        contentView.addSubview(menuLinkButton)
+
+        NSLayoutConstraint.activate([
+            menuLinkButton.topAnchor.constraint(equalTo: menuInstructions.bottomAnchor, constant: 10),
+            menuLinkButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            menuLinkButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            menuLinkButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        ])
+    }
+
+    @objc func menuLinkButtonTapped() {
+        guard let youtubeLink = menu?.youtubeLink, let url = URL(string: youtubeLink) else { return }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 
     convenience init(menu: Menu?) {
