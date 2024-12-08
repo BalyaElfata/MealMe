@@ -7,6 +7,7 @@ class MenuDetailView: UIViewController {
     
     var menuImage: UIImageView = UIImageView(image: UIImage(systemName: "photo"))
     var menuLabel: UILabel = UILabel()
+    let menuLabelContainer = UIView()
     let menuIngredientsTitle = UILabel()
     let menuIngredients = UILabel()
     let menuInstructionsTitle = UILabel()
@@ -80,17 +81,29 @@ class MenuDetailView: UIViewController {
     }
     
     func setupMenuLabel() {
+        menuLabelContainer.backgroundColor = .lightGray
+        menuLabelContainer.layer.cornerRadius = 16
+        menuLabelContainer.layer.masksToBounds = true
+        menuLabelContainer.translatesAutoresizingMaskIntoConstraints = false
+        
         menuLabel.text = menu?.label
         menuLabel.font = UIFont.boldSystemFont(ofSize: 16)
         menuLabel.textAlignment = .left
         menuLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        contentView.addSubview(menuLabel)
+        contentView.addSubview(menuLabelContainer)
+        menuLabelContainer.addSubview(menuLabel)
         
         NSLayoutConstraint.activate([
-            menuLabel.topAnchor.constraint(equalTo: menuImage.bottomAnchor, constant: 10),
-            menuLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            menuLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20)
+            menuLabelContainer.topAnchor.constraint(equalTo: menuImage.bottomAnchor, constant: 10),
+            menuLabelContainer.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20)
+        ])
+        
+        NSLayoutConstraint.activate([
+            menuLabel.topAnchor.constraint(equalTo: menuLabelContainer.topAnchor, constant: 8),
+            menuLabel.leadingAnchor.constraint(equalTo: menuLabelContainer.leadingAnchor, constant: 8),
+            menuLabel.trailingAnchor.constraint(equalTo: menuLabelContainer.trailingAnchor, constant: -8),
+            menuLabel.bottomAnchor.constraint(equalTo: menuLabelContainer.bottomAnchor, constant: -8)
         ])
     }
     
@@ -109,7 +122,7 @@ class MenuDetailView: UIViewController {
         contentView.addSubview(menuIngredients)
         
         NSLayoutConstraint.activate([
-            menuIngredientsTitle.topAnchor.constraint(equalTo: menuLabel.bottomAnchor, constant: 10),
+            menuIngredientsTitle.topAnchor.constraint(equalTo: menuLabelContainer.bottomAnchor, constant: 10),
             menuIngredientsTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             menuIngredientsTitle.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             
