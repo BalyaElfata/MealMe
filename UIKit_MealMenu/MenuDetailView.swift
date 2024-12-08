@@ -88,12 +88,12 @@ class MenuDetailView: UIViewController {
     
     func setupMenuIngredients() {
         menuIngredientsTitle.text = "Ingredients"
-        menuIngredientsTitle.font = UIFont.boldSystemFont(ofSize: 16)
+        menuIngredientsTitle.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         menuIngredientsTitle.textAlignment = .left
         menuIngredientsTitle.translatesAutoresizingMaskIntoConstraints = false
         
         menuIngredients.text = menu?.ingredients
-        menuIngredients.font = UIFont.boldSystemFont(ofSize: 16)
+        menuIngredients.font = UIFont.systemFont(ofSize: 14)
         menuIngredients.textAlignment = .left
         menuIngredients.translatesAutoresizingMaskIntoConstraints = false
         
