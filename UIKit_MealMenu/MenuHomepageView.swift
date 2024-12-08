@@ -5,7 +5,9 @@ class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollecti
     let menuImage = UIImageView()
     let menuName = UILabel()
     let menuLabel = UILabel()
+    
     var menuData: [Menu] = []
+    var filteredMenuData: [Menu] = []
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -26,6 +28,7 @@ class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollecti
                 let menuService = MenuService()
                 let data = try await menuService.getMenus()
                 self.menuData = data.meals
+                self.filteredMenuData = self.menuData // Initially display all menus
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }
@@ -54,7 +57,7 @@ class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollecti
     
     // MARK: - UICollectionViewDataSource Methods
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return menuData.count
+        return filteredMenuData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -64,7 +67,7 @@ class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollecti
             subview.removeFromSuperview()
         }
         
-        let menu = menuData[indexPath.row]
+        let menu = filteredMenuData[indexPath.row]
         
         let menuImage = UIImageView()
         if let url = URL(string: menu.image) {
@@ -127,11 +130,8 @@ class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollecti
     
     // MARK: - UICollectionViewDelegate Method
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selectedMenu = menuData[indexPath.item]
-        var destinationViewController: UIViewController
-        
-        destinationViewController = MenuDetailView(menu: selectedMenu)
-        
+        let selectedMenu = filteredMenuData[indexPath.item]
+        let destinationViewController = MenuDetailView(menu: selectedMenu)
         navigationController?.pushViewController(destinationViewController, animated: true)
     }
     
@@ -149,8 +149,12 @@ class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollecti
 
 extension MenuHomepageView: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        guard let searchText = searchController.searchBar.text else { return }
-        print("searchText: \(searchText)")
-//        viewModel.updateSearchResults(for: searchText)
+        guard let searchText = searchController.searchBar.text?.lowercased(), !searchText.isEmpty else {
+            filteredMenuData = menuData
+            collectionView.reloadData()
+            return
+        }
+        filteredMenuData = menuData.filter { $0.name.lowercased().contains(searchText) }
+        collectionView.reloadData()
     }
 }
