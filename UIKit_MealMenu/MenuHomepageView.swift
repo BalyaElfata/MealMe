@@ -1,6 +1,7 @@
 import UIKit
 
-class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
+    let searchController = UISearchController()
     let menuImage = UIImageView()
     let menuName = UILabel()
     let menuLabel = UILabel()
@@ -17,6 +18,7 @@ class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollecti
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         title = "Menu"
+        setupSearchController()
         setupCollectionView()
         
         Task {
@@ -131,5 +133,24 @@ class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollecti
         destinationViewController = MenuDetailView(menu: selectedMenu)
         
         navigationController?.pushViewController(destinationViewController, animated: true)
+    }
+    
+    func setupSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.placeholder = "Search menu..."
+        
+        self.navigationItem.searchController = searchController
+        self.definesPresentationContext = false
+        self.navigationItem.hidesSearchBarWhenScrolling = false
+    }
+}
+
+extension MenuHomepageView: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchText = searchController.searchBar.text else { return }
+        print("searchText: \(searchText)")
+//        viewModel.updateSearchResults(for: searchText)
     }
 }
