@@ -154,9 +154,8 @@ class MenuDetailView: UIViewController {
         menuLinkButton.imageView?.contentMode = .scaleAspectFit
         menuLinkButton.contentHorizontalAlignment = .trailing
         
-        let spacing: CGFloat = 8
         menuLinkButton.semanticContentAttribute = .forceRightToLeft
-        menuLinkButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: spacing, bottom: 0, right: 0)
+        menuLinkButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0)
 
         menuLinkButton.translatesAutoresizingMaskIntoConstraints = false
 
