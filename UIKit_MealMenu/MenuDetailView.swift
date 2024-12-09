@@ -113,12 +113,25 @@ class MenuDetailView: UIViewController {
         menuIngredientsTitle.textAlignment = .left
         menuIngredientsTitle.translatesAutoresizingMaskIntoConstraints = false
         
-        menuIngredients.text = {"""
-        \(menu?.measure1 ?? "") \(menu?.ingredient1 ?? "") 
-        \(menu?.measure2 ?? "") \(menu?.ingredient2 ?? "")
-        \(menu?.measure3 ?? "") \(menu?.ingredient3 ?? "")
-        \(menu?.measure4 ?? "") \(menu?.ingredient4 ?? "")
-        """}()
+        menuIngredients.text = {
+            var ingredientsText = ""
+            
+            let mirror = Mirror(reflecting: menu!)
+            for menuIndex in 1...20 {
+                let measureKey = "measure\(menuIndex)"
+                let ingredientKey = "ingredient\(menuIndex)"
+                
+                let measure = mirror.descendant(measureKey) as? String ?? ""
+                let ingredient = mirror.descendant(ingredientKey) as? String ?? ""
+                
+                if !measure.isEmpty || !ingredient.isEmpty {
+                    ingredientsText += "\(measure) \(ingredient)\n"
+                }
+            }
+            
+            return ingredientsText.trimmingCharacters(in: .whitespacesAndNewlines)
+        }()
+
         menuIngredients.numberOfLines = 0
         menuIngredients.font = UIFont.systemFont(ofSize: 14)
         menuIngredients.textAlignment = .left
