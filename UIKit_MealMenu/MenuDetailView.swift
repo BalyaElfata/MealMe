@@ -113,7 +113,13 @@ class MenuDetailView: UIViewController {
         menuIngredientsTitle.textAlignment = .left
         menuIngredientsTitle.translatesAutoresizingMaskIntoConstraints = false
         
-        menuIngredients.text = menu?.ingredients
+        menuIngredients.text = {"""
+        \(menu?.measure1 ?? "") \(menu?.ingredient1 ?? "") 
+        \(menu?.measure2 ?? "") \(menu?.ingredient2 ?? "")
+        \(menu?.measure3 ?? "") \(menu?.ingredient3 ?? "")
+        \(menu?.measure4 ?? "") \(menu?.ingredient4 ?? "")
+        """}()
+        menuIngredients.numberOfLines = 0
         menuIngredients.font = UIFont.systemFont(ofSize: 14)
         menuIngredients.textAlignment = .left
         menuIngredients.translatesAutoresizingMaskIntoConstraints = false
