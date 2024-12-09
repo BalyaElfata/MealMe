@@ -1,19 +1,19 @@
 import UIKit
 
 class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
-    let searchController = UISearchController()
+    private let searchController = UISearchController()
     
-    var menuData: [Menu] = []
-    var filteredMenuData: [Menu] = []
-    var selectedLabels: [String] = []
+    private var menuData: [Menu] = []
+    private var filteredMenuData: [Menu] = []
+    private var selectedLabels: [String] = []
     
-    let filterButtonsScrollView: UIScrollView = {
+    private let filterButtonsScrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.showsHorizontalScrollIndicator = false
         return scrollView
     }()
     
-    let collectionView: UICollectionView = {
+    private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 10
