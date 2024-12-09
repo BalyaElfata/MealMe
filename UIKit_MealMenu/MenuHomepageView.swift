@@ -2,12 +2,16 @@ import UIKit
 
 class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     let searchController = UISearchController()
-    let menuImage = UIImageView()
-    let menuName = UILabel()
-    let menuLabel = UILabel()
     
     var menuData: [Menu] = []
     var filteredMenuData: [Menu] = []
+    var selectedLabels: [String] = []
+    
+    let filterButtonsScrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.showsHorizontalScrollIndicator = false
+        return scrollView
+    }()
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -20,7 +24,9 @@ class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollecti
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         title = "Menu"
+        
         setupSearchController()
+        setupFilterButtons()
         setupCollectionView()
         
         Task {
@@ -30,6 +36,7 @@ class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollecti
                 self.menuData = data.meals
                 self.filteredMenuData = self.menuData // Initially display all menus
                 DispatchQueue.main.async {
+                    self.setupFilterButtonsContent()
                     self.collectionView.reloadData()
                 }
             } catch {
@@ -48,7 +55,7 @@ class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollecti
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            collectionView.topAnchor.constraint(equalTo: filterButtonsScrollView.bottomAnchor, constant: 10),
             collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
             collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
             collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
@@ -145,16 +152,81 @@ class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollecti
         self.definesPresentationContext = false
         self.navigationItem.hidesSearchBarWhenScrolling = false
     }
+    
+    func setupFilterButtons() {
+        view.addSubview(filterButtonsScrollView)
+        filterButtonsScrollView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            filterButtonsScrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            filterButtonsScrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            filterButtonsScrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            filterButtonsScrollView.heightAnchor.constraint(equalToConstant: 40)
+        ])
+    }
+    
+    func setupFilterButtonsContent() {
+        let uniqueLabels = Set(menuData.map { $0.label }).sorted()
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.spacing = 16
+        
+        uniqueLabels.forEach { label in
+            let button = UIButton(type: .system)
+            button.setTitle(label, for: .normal)
+            button.addTarget(self, action: #selector(filterButtonTapped(_:)), for: .touchUpInside)
+            button.tag = uniqueLabels.firstIndex(of: label) ?? 0
+            stackView.addArrangedSubview(button)
+        }
+        
+        filterButtonsScrollView.addSubview(stackView)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: filterButtonsScrollView.topAnchor),
+            stackView.leadingAnchor.constraint(equalTo: filterButtonsScrollView.leadingAnchor, constant: 10),
+            stackView.trailingAnchor.constraint(equalTo: filterButtonsScrollView.trailingAnchor, constant: -10),
+            stackView.bottomAnchor.constraint(equalTo: filterButtonsScrollView.bottomAnchor),
+            stackView.heightAnchor.constraint(equalTo: filterButtonsScrollView.heightAnchor)
+        ])
+    }
+    
+    @objc func filterButtonTapped(_ sender: UIButton) {
+        guard let label = sender.title(for: .normal) else { return }
+        
+        if selectedLabels.contains(label) {
+            selectedLabels.removeAll { $0 == label } // Deselect if already selected
+        } else {
+            selectedLabels.append(label) // Select new label
+        }
+        
+        // Update UI for button states
+        for case let button as UIButton in sender.superview?.subviews ?? [] {
+            button.isSelected = selectedLabels.contains(button.title(for: .normal) ?? "")
+//            button.backgroundColor = button.isSelected ? .systemBlue : .systemGray5
+        }
+        
+        applyFilters()
+    }
+
+    func applyFilters() {
+        if selectedLabels.isEmpty {
+            filteredMenuData = menuData
+        } else {
+            filteredMenuData = menuData.filter { selectedLabels.contains($0.label) }
+        }
+        
+        // Apply search filter
+        if let searchText = searchController.searchBar.text?.lowercased(), !searchText.isEmpty {
+            filteredMenuData = filteredMenuData.filter { $0.name.lowercased().contains(searchText) }
+        }
+        
+        collectionView.reloadData()
+    }
+
 }
 
 extension MenuHomepageView: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        guard let searchText = searchController.searchBar.text?.lowercased(), !searchText.isEmpty else {
-            filteredMenuData = menuData
-            collectionView.reloadData()
-            return
-        }
-        filteredMenuData = menuData.filter { $0.name.lowercased().contains(searchText) }
-        collectionView.reloadData()
+        applyFilters()
     }
 }
