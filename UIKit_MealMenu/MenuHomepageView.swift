@@ -34,7 +34,7 @@ class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollecti
                 let menuService = MenuService()
                 let data = try await menuService.getMenus()
                 self.menuData = data.meals
-                self.filteredMenuData = self.menuData // Initially display all menus
+                self.filteredMenuData = self.menuData
                 DispatchQueue.main.async {
                     self.setupFilterButtonsContent()
                     self.collectionView.reloadData()
@@ -194,15 +194,13 @@ class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollecti
         guard let label = sender.title(for: .normal) else { return }
         
         if selectedLabels.contains(label) {
-            selectedLabels.removeAll { $0 == label } // Deselect if already selected
+            selectedLabels.removeAll { $0 == label }
         } else {
-            selectedLabels.append(label) // Select new label
+            selectedLabels.append(label)
         }
         
-        // Update UI for button states
         for case let button as UIButton in sender.superview?.subviews ?? [] {
             button.isSelected = selectedLabels.contains(button.title(for: .normal) ?? "")
-//            button.backgroundColor = button.isSelected ? .systemBlue : .systemGray5
         }
         
         applyFilters()
@@ -215,7 +213,6 @@ class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollecti
             filteredMenuData = menuData.filter { selectedLabels.contains($0.label) }
         }
         
-        // Apply search filter
         if let searchText = searchController.searchBar.text?.lowercased(), !searchText.isEmpty {
             filteredMenuData = filteredMenuData.filter { $0.name.lowercased().contains(searchText) }
         }
