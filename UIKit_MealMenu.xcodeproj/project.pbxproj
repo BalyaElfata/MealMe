@@ -18,6 +18,7 @@
 		2159F5652D009592006DEAA7 /* MenuDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F5642D009592006DEAA7 /* MenuDetailView.swift */; };
 		2159F5672D00C461006DEAA7 /* MenuData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F5662D00C45B006DEAA7 /* MenuData.swift */; };
 		2159F5692D00C49C006DEAA7 /* MenuService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F5682D00C499006DEAA7 /* MenuService.swift */; };
+		219F4D9F2D6ECC30003DADB6 /* SavedMeal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 219F4D9D2D6ECC30003DADB6 /* SavedMeal.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		2159F5642D009592006DEAA7 /* MenuDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailView.swift; sourceTree = "<group>"; };
 		2159F5662D00C45B006DEAA7 /* MenuData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuData.swift; sourceTree = "<group>"; };
 		2159F5682D00C499006DEAA7 /* MenuService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuService.swift; sourceTree = "<group>"; };
+		219F4D9E2D6ECC30003DADB6 /* SavedMeal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SavedMeal.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				2159F54F2D0091E8006DEAA7 /* Assets.xcassets */,
 				2159F5502D0091E8006DEAA7 /* Info.plist */,
 				2159F5522D0091E8006DEAA7 /* LaunchScreen.storyboard */,
+				219F4D9D2D6ECC30003DADB6 /* SavedMeal.xcdatamodeld */,
 			);
 			path = UIKit_MealMenu;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				2159F5652D009592006DEAA7 /* MenuDetailView.swift in Sources */,
 				2159F5582D0091E8006DEAA7 /* SceneDelegate.swift in Sources */,
 				2159F5672D00C461006DEAA7 /* MenuData.swift in Sources */,
+				219F4D9F2D6ECC30003DADB6 /* SavedMeal.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,6 +636,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		219F4D9D2D6ECC30003DADB6 /* SavedMeal.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				219F4D9E2D6ECC30003DADB6 /* SavedMeal.xcdatamodel */,
+			);
+			currentVersion = 219F4D9E2D6ECC30003DADB6 /* SavedMeal.xcdatamodel */;
+			path = SavedMeal.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2159F5122D008FBA006DEAA7 /* Project object */;
 }
