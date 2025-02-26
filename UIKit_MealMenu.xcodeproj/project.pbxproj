@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		210584C72D6ED5F500951D14 /* SavedMealItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210584C52D6ED5F500951D14 /* SavedMealItem+CoreDataClass.swift */; };
+		210584C82D6ED5F500951D14 /* SavedMealItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210584C62D6ED5F500951D14 /* SavedMealItem+CoreDataProperties.swift */; };
 		2159F5562D0091E8006DEAA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F54E2D0091E8006DEAA7 /* AppDelegate.swift */; };
 		2159F5572D0091E8006DEAA7 /* MenuHomepageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F5532D0091E8006DEAA7 /* MenuHomepageView.swift */; };
 		2159F5582D0091E8006DEAA7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F5542D0091E8006DEAA7 /* SceneDelegate.swift */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		210584C52D6ED5F500951D14 /* SavedMealItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedMealItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		210584C62D6ED5F500951D14 /* SavedMealItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedMealItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2159F51A2D008FBA006DEAA7 /* UIKit_MealMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKit_MealMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2159F5302D008FBC006DEAA7 /* UIKit_MealMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIKit_MealMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2159F53A2D008FBC006DEAA7 /* UIKit_MealMenuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIKit_MealMenuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +119,8 @@
 				2159F5502D0091E8006DEAA7 /* Info.plist */,
 				2159F5522D0091E8006DEAA7 /* LaunchScreen.storyboard */,
 				219F4D9D2D6ECC30003DADB6 /* SavedMeal.xcdatamodeld */,
+				210584C52D6ED5F500951D14 /* SavedMealItem+CoreDataClass.swift */,
+				210584C62D6ED5F500951D14 /* SavedMealItem+CoreDataProperties.swift */,
 			);
 			path = UIKit_MealMenu;
 			sourceTree = "<group>";
@@ -295,6 +301,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				210584C72D6ED5F500951D14 /* SavedMealItem+CoreDataClass.swift in Sources */,
+				210584C82D6ED5F500951D14 /* SavedMealItem+CoreDataProperties.swift in Sources */,
 				2159F5562D0091E8006DEAA7 /* AppDelegate.swift in Sources */,
 				2159F5572D0091E8006DEAA7 /* MenuHomepageView.swift in Sources */,
 				2159F5692D00C49C006DEAA7 /* MenuService.swift in Sources */,
