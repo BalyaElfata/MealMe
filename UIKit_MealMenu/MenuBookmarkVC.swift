@@ -2,7 +2,7 @@ import UIKit
 import CoreData
 
 class MenuBookmarkVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    private var menu = [SavedMealItem]()
+    private var menus = [SavedMealItem]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     private let tableView: UITableView = {
@@ -20,11 +20,50 @@ class MenuBookmarkVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        0
+        return menus.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        UITableViewCell()
+        let menu = menus[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = menu.name
+        return cell
     }
     
+    func getAllMenus() {
+        do {
+            menus = try context.fetch(SavedMealItem.fetchRequest())
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        catch {
+            // error
+        }
+    }
+    
+    func addMenu(name: String) {
+        let newMenu = SavedMealItem(context: context)
+        newMenu.name = name
+        
+        do {
+            try context.save()
+            getAllMenus()
+        }
+        catch {
+            // error
+        }
+    }
+    
+    func deleteMenu(menu: SavedMealItem) {
+        context.delete(menu)
+        
+        do {
+            try context.save()
+            getAllMenus()
+        }
+        catch {
+            // error
+        }
+    }
 }
