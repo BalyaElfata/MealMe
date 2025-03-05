@@ -1,6 +1,6 @@
 import UIKit
 
-class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
+class MenuHomepageVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     private let searchController = UISearchController()
     
     private var menuData: [Menu] = []
@@ -138,7 +138,7 @@ class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollecti
     // MARK: - UICollectionViewDelegate Method
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedMenu = filteredMenuData[indexPath.item]
-        let destinationViewController = MenuDetailView(menu: selectedMenu)
+        let destinationViewController = MenuDetailVC(menu: selectedMenu)
         navigationController?.pushViewController(destinationViewController, animated: true)
     }
     
@@ -222,7 +222,7 @@ class MenuHomepageView: UIViewController, UICollectionViewDataSource, UICollecti
 
 }
 
-extension MenuHomepageView: UISearchResultsUpdating {
+extension MenuHomepageVC: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         applyFilters()
     }

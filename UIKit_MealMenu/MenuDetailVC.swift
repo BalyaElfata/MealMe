@@ -1,6 +1,6 @@
 import UIKit
 
-class MenuDetailView: UIViewController {
+class MenuDetailVC: UIViewController {
     var menu: Menu?
     let scrollView = UIScrollView()
     let contentView = UIView()
