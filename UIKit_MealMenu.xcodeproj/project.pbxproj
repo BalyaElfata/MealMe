@@ -86,6 +86,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		210584ED2D77D29100951D14 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				210584C52D6ED5F500951D14 /* SavedMealItem+CoreDataClass.swift */,
+				210584C62D6ED5F500951D14 /* SavedMealItem+CoreDataProperties.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		2159F5112D008FBA006DEAA7 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +118,7 @@
 		2159F5552D0091E8006DEAA7 /* UIKit_MealMenu */ = {
 			isa = PBXGroup;
 			children = (
+				210584ED2D77D29100951D14 /* Models */,
 				2159F54E2D0091E8006DEAA7 /* AppDelegate.swift */,
 				2159F5542D0091E8006DEAA7 /* SceneDelegate.swift */,
 				2159F5532D0091E8006DEAA7 /* MenuHomepageView.swift */,
@@ -119,8 +129,6 @@
 				2159F5502D0091E8006DEAA7 /* Info.plist */,
 				2159F5522D0091E8006DEAA7 /* LaunchScreen.storyboard */,
 				219F4D9D2D6ECC30003DADB6 /* SavedMeal.xcdatamodeld */,
-				210584C52D6ED5F500951D14 /* SavedMealItem+CoreDataClass.swift */,
-				210584C62D6ED5F500951D14 /* SavedMealItem+CoreDataProperties.swift */,
 			);
 			path = UIKit_MealMenu;
 			sourceTree = "<group>";
