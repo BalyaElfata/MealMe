@@ -1,9 +1,7 @@
 import Foundation
 import CoreData
 
-
 extension SavedMealItem {
-
     @nonobjc public class func fetchRequest() -> NSFetchRequest<SavedMealItem> {
         return NSFetchRequest<SavedMealItem>(entityName: "SavedMealItem")
     }
@@ -57,6 +55,6 @@ extension SavedMealItem {
     @NSManaged public var measure20: String?
 }
 
-extension SavedMealItem : Identifiable {
-
+extension SavedMealItem: Identifiable {
+    
 }
