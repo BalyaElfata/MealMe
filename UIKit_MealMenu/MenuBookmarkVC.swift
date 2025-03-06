@@ -18,15 +18,14 @@ class MenuBookmarkVC: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getAllMenus()
         view.addSubview(tableView)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.frame = view.bounds
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func beginAppearanceTransition(_ isAppearing: Bool, animated: Bool) {
+        super.beginAppearanceTransition(isAppearing, animated: animated)
         getAllMenus()
     }
     
