@@ -41,8 +41,7 @@ class MenuBookmarkVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
-        }
-        catch {
+        } catch {
             // error
         }
     }
@@ -54,8 +53,7 @@ class MenuBookmarkVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         do {
             try context.save()
             getAllMenus()
-        }
-        catch {
+        } catch {
             // error
         }
     }
@@ -66,8 +64,7 @@ class MenuBookmarkVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         do {
             try context.save()
             getAllMenus()
-        }
-        catch {
+        } catch {
             // error
         }
     }
