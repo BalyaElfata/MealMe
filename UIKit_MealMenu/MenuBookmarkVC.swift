@@ -25,6 +25,11 @@ class MenuBookmarkVC: UIViewController, UITableViewDataSource {
         tableView.frame = view.bounds
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        getAllMenus()
+    }
+    
     func getAllMenus() {
         do {
             menus = try context.fetch(SavedMealItem.fetchRequest())
