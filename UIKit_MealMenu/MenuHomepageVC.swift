@@ -152,7 +152,9 @@ class MenuHomepageVC: UIViewController, UICollectionViewDataSource, UICollection
         self.definesPresentationContext = false
         self.navigationItem.hidesSearchBarWhenScrolling = false
     }
-    
+}
+
+extension MenuHomepageVC: UISearchResultsUpdating {
     func setupFilterButtons() {
         view.addSubview(filterButtonsScrollView)
         filterButtonsScrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -205,7 +207,7 @@ class MenuHomepageVC: UIViewController, UICollectionViewDataSource, UICollection
         
         applyFilters()
     }
-
+    
     func applyFilters() {
         if selectedLabels.isEmpty {
             filteredMenuData = menuData
@@ -219,10 +221,7 @@ class MenuHomepageVC: UIViewController, UICollectionViewDataSource, UICollection
         
         collectionView.reloadData()
     }
-
-}
-
-extension MenuHomepageVC: UISearchResultsUpdating {
+    
     func updateSearchResults(for searchController: UISearchController) {
         applyFilters()
     }
