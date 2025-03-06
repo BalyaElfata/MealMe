@@ -3,7 +3,12 @@ import CoreData
 
 class MenuBookmarkVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     private var menus = [SavedMealItem]()
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let context: NSManagedObjectContext = {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            fatalError("Unable to retrieve AppDelegate")
+        }
+        return appDelegate.persistentContainer.viewContext
+    }()
     
     private let tableView: UITableView = {
         let tableView = UITableView()
