@@ -25,6 +25,7 @@ class MenuHomepageVC: UIViewController, UICollectionViewDataSource, UICollection
         view.backgroundColor = .systemBackground
         title = "Menu"
         
+        setupBookmarkListButton()
         setupSearchController()
         setupFilterButtons()
         setupCollectionView()
@@ -43,6 +44,18 @@ class MenuHomepageVC: UIViewController, UICollectionViewDataSource, UICollection
                 print("Failed to fetch data: \(error)")
             }
         }
+    }
+    
+    func setupBookmarkListButton() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .bookmarks,
+            target: self,
+            action: #selector(handleBookmarkListButton))
+    }
+    
+    @objc func handleBookmarkListButton() {
+        let destinationViewController = MenuBookmarkVC()
+        navigationController?.pushViewController(destinationViewController, animated: true)
     }
     
     func setupCollectionView() {
