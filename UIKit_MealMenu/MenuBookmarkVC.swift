@@ -1,7 +1,7 @@
 import UIKit
 import CoreData
 
-class MenuBookmarkVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MenuBookmarkVC: UIViewController, UITableViewDataSource {
     private var menus = [SavedMealItem]()
     let context: NSManagedObjectContext = {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -23,17 +23,6 @@ class MenuBookmarkVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
         tableView.delegate = self
         tableView.frame = view.bounds
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menus.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let menu = menus[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = menu.name
-        return cell
     }
     
     func getAllMenus() {
@@ -67,6 +56,36 @@ class MenuBookmarkVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             getAllMenus()
         } catch {
             // error
+        }
+    }
+}
+
+extension MenuBookmarkVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return menus.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let menu = menus[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = menu.name
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let menuService = MenuService()
+        Task {
+            do {
+                let data = try await menuService.getMenus()
+                if let selectedMenu = data.meals.first(where: { $0.name == menus[indexPath.row].name }) {
+                    let destinationViewController = MenuDetailVC(menu: selectedMenu)
+                    navigationController?.pushViewController(destinationViewController, animated: true)
+                }
+            } catch {
+                // handle error
+            }
         }
     }
 }
