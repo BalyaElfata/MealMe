@@ -18,6 +18,8 @@ class MenuBookmarkVC: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Saved Menu"
         view.addSubview(tableView)
         tableView.dataSource = self
         tableView.delegate = self
