@@ -18,6 +18,7 @@ class MenuBookmarkVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getAllMenus()
         view.addSubview(tableView)
         tableView.dataSource = self
         tableView.delegate = self
