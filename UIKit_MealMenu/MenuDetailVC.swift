@@ -1,4 +1,5 @@
 import UIKit
+import CoreData
 
 class MenuDetailVC: UIViewController {
     var menu: Menu?
@@ -17,6 +18,15 @@ class MenuDetailVC: UIViewController {
     let menuLinkButton: UIButton = UIButton()
     let youtubeIcon: UIImage? = UIImage(named: "youtubeIcon")
     
+    var bookmarkSaved: Bool = false
+    
+    let context: NSManagedObjectContext = {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            fatalError("Unable to retrieve AppDelegate")
+        }
+        return appDelegate.persistentContainer.viewContext
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = menu?.name
@@ -24,6 +34,7 @@ class MenuDetailVC: UIViewController {
         view.backgroundColor = .systemBackground
         
         setupScrollView()
+        setupBookmarkButton()
         setupMenuImage()
         setupMenuLabel()
         setupMenuIngredients()
@@ -105,6 +116,74 @@ class MenuDetailVC: UIViewController {
             menuLabel.trailingAnchor.constraint(equalTo: menuLabelContainer.trailingAnchor, constant: -8),
             menuLabel.bottomAnchor.constraint(equalTo: menuLabelContainer.bottomAnchor, constant: -8)
         ])
+    }
+    
+    func setupBookmarkButton() {
+        if let menuName = menu?.name {
+            let fetchRequest: NSFetchRequest<SavedMealItem> = SavedMealItem.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "name == %@", menuName)
+            
+            do {
+                let items = try context.fetch(fetchRequest)
+                if items.isEmpty {
+                    self.navigationItem.setRightBarButton(
+                        UIBarButtonItem(
+                            image: UIImage(systemName: "bookmark"),
+                            style: .plain,
+                            target: self,
+                            action: #selector(handleBookmarkButton)), animated: true)
+                } else {
+                    self.navigationItem.setRightBarButton(
+                        UIBarButtonItem(
+                            image: UIImage(systemName: "bookmark.fill"),
+                            style: .plain,
+                            target: self,
+                            action: #selector(handleBookmarkButton)), animated: true)
+                }
+            } catch {
+                print("Failed to fetch saved menu item: \(error)")
+            }
+        }
+    }
+    
+    @objc func handleBookmarkButton() {
+        if let menuName = menu?.name {
+            let fetchRequest: NSFetchRequest<SavedMealItem> = SavedMealItem.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "name == %@", menuName)
+            
+            do {
+                let items = try context.fetch(fetchRequest)
+                if items.isEmpty {
+                    let newMenu = SavedMealItem(context: context)
+                    newMenu.name = menu?.name
+                    self.navigationItem.setRightBarButton(
+                        UIBarButtonItem(
+                            image: UIImage(systemName: "bookmark.fill"),
+                            style: .plain,
+                            target: self,
+                            action: #selector(handleBookmarkButton)), animated: true)
+                } else {
+                    for item in items {
+                        context.delete(item)
+                    }
+                    self.navigationItem.setRightBarButton(
+                        UIBarButtonItem(
+                            image: UIImage(systemName: "bookmark"),
+                            style: .plain,
+                            target: self,
+                            action: #selector(handleBookmarkButton)), animated: true)
+                }
+            } catch {
+                print("Failed to fetch saved menu item: \(error)")
+            }
+        }
+        
+        do {
+            try context.save()
+        } catch {
+            // handle error
+            print("Failed to save context: \(error)")
+        }
     }
     
     func setupMenuIngredients() {
