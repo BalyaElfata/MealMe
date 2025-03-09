@@ -11,6 +11,11 @@
 		210584C82D6ED5F500951D14 /* SavedMealItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210584C62D6ED5F500951D14 /* SavedMealItem+CoreDataProperties.swift */; };
 		210584EF2D78539C00951D14 /* MenuBookmarkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210584EE2D78538900951D14 /* MenuBookmarkVC.swift */; };
 		2105850D2D7D3E6600951D14 /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2105850C2D7D3E6600951D14 /* ModelTests.swift */; };
+		210585162D7D56FE00951D14 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210585152D7D56FD00951D14 /* Menu.swift */; };
+		2105851C2D7D57F600951D14 /* MenuRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2105851B2D7D57F200951D14 /* MenuRepository.swift */; };
+		2105851E2D7D581C00951D14 /* FetchMenusUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2105851D2D7D581700951D14 /* FetchMenusUseCase.swift */; };
+		210585202D7D586900951D14 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2105851F2D7D586400951D14 /* NetworkService.swift */; };
+		210585222D7D589F00951D14 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210585212D7D589C00951D14 /* MenuViewModel.swift */; };
 		2159F5562D0091E8006DEAA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F54E2D0091E8006DEAA7 /* AppDelegate.swift */; };
 		2159F5572D0091E8006DEAA7 /* MenuHomepageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F5532D0091E8006DEAA7 /* MenuHomepageVC.swift */; };
 		2159F5582D0091E8006DEAA7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F5542D0091E8006DEAA7 /* SceneDelegate.swift */; };
@@ -47,6 +52,11 @@
 		210584C62D6ED5F500951D14 /* SavedMealItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedMealItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		210584EE2D78538900951D14 /* MenuBookmarkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBookmarkVC.swift; sourceTree = "<group>"; };
 		2105850C2D7D3E6600951D14 /* ModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
+		210585152D7D56FD00951D14 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		2105851B2D7D57F200951D14 /* MenuRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRepository.swift; sourceTree = "<group>"; };
+		2105851D2D7D581700951D14 /* FetchMenusUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMenusUseCase.swift; sourceTree = "<group>"; };
+		2105851F2D7D586400951D14 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		210585212D7D589C00951D14 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		2159F51A2D008FBA006DEAA7 /* UIKit_MealMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKit_MealMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2159F5302D008FBC006DEAA7 /* UIKit_MealMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIKit_MealMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2159F53A2D008FBC006DEAA7 /* UIKit_MealMenuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIKit_MealMenuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +109,87 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		2105850F2D7D569E00951D14 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				210585142D7D56F200951D14 /* UseCases */,
+				210585132D7D56E900951D14 /* Entities */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		210585102D7D56A100951D14 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				210585182D7D57B600951D14 /* Network */,
+				210585172D7D57A800951D14 /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		210585112D7D56A700951D14 /* App */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		210585122D7D56B500951D14 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				2105851A2D7D57D100951D14 /* ViewModels */,
+				210585192D7D57CB00951D14 /* Views */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		210585132D7D56E900951D14 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				210585152D7D56FD00951D14 /* Menu.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		210585142D7D56F200951D14 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				2105851D2D7D581700951D14 /* FetchMenusUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		210585172D7D57A800951D14 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				2105851B2D7D57F200951D14 /* MenuRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		210585182D7D57B600951D14 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2105851F2D7D586400951D14 /* NetworkService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		210585192D7D57CB00951D14 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2105851A2D7D57D100951D14 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				210585212D7D589C00951D14 /* MenuViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		2159F5112D008FBA006DEAA7 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +213,10 @@
 		2159F5552D0091E8006DEAA7 /* UIKit_MealMenu */ = {
 			isa = PBXGroup;
 			children = (
+				210585122D7D56B500951D14 /* Presentation */,
+				210585112D7D56A700951D14 /* App */,
+				210585102D7D56A100951D14 /* Data */,
+				2105850F2D7D569E00951D14 /* Domain */,
 				210584ED2D77D29100951D14 /* Models */,
 				2159F54E2D0091E8006DEAA7 /* AppDelegate.swift */,
 				2159F5542D0091E8006DEAA7 /* SceneDelegate.swift */,
@@ -317,9 +412,14 @@
 			files = (
 				210584C72D6ED5F500951D14 /* SavedMealItem+CoreDataClass.swift in Sources */,
 				210584EF2D78539C00951D14 /* MenuBookmarkVC.swift in Sources */,
+				2105851E2D7D581C00951D14 /* FetchMenusUseCase.swift in Sources */,
+				210585222D7D589F00951D14 /* MenuViewModel.swift in Sources */,
 				210584C82D6ED5F500951D14 /* SavedMealItem+CoreDataProperties.swift in Sources */,
 				2159F5562D0091E8006DEAA7 /* AppDelegate.swift in Sources */,
+				2105851C2D7D57F600951D14 /* MenuRepository.swift in Sources */,
+				210585202D7D586900951D14 /* NetworkService.swift in Sources */,
 				2159F5572D0091E8006DEAA7 /* MenuHomepageVC.swift in Sources */,
+				210585162D7D56FE00951D14 /* Menu.swift in Sources */,
 				2159F5692D00C49C006DEAA7 /* MenuService.swift in Sources */,
 				2159F5652D009592006DEAA7 /* MenuDetailVC.swift in Sources */,
 				2159F5582D0091E8006DEAA7 /* SceneDelegate.swift in Sources */,
