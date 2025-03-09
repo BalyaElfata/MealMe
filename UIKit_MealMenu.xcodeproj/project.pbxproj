@@ -20,13 +20,11 @@
 		213581C92D7D6F4700FCDF50 /* MenuDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213581C72D7D6F4700FCDF50 /* MenuDetailVC.swift */; };
 		213581CA2D7D6F4700FCDF50 /* MenuHomepageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213581C82D7D6F4700FCDF50 /* MenuHomepageVC.swift */; };
 		2159F5562D0091E8006DEAA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F54E2D0091E8006DEAA7 /* AppDelegate.swift */; };
-		2159F5572D0091E8006DEAA7 /* MenuHomepageVC 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F5532D0091E8006DEAA7 /* MenuHomepageVC 2.swift */; };
 		2159F5592D0091E8006DEAA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2159F54F2D0091E8006DEAA7 /* Assets.xcassets */; };
 		2159F55B2D0091E8006DEAA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2159F5522D0091E8006DEAA7 /* LaunchScreen.storyboard */; };
 		2159F55F2D0091EF006DEAA7 /* UIKit_MealMenuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F55C2D0091EF006DEAA7 /* UIKit_MealMenuUITests.swift */; };
 		2159F5602D0091EF006DEAA7 /* UIKit_MealMenuUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F55D2D0091EF006DEAA7 /* UIKit_MealMenuUITestsLaunchTests.swift */; };
 		2159F5632D0091EF006DEAA7 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F5612D0091EF006DEAA7 /* NetworkTests.swift */; };
-		2159F5652D009592006DEAA7 /* MenuDetailVC 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F5642D009592006DEAA7 /* MenuDetailVC 2.swift */; };
 		219F4D9F2D6ECC30003DADB6 /* SavedMeal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 219F4D9D2D6ECC30003DADB6 /* SavedMeal.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -67,11 +65,9 @@
 		2159F54F2D0091E8006DEAA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2159F5502D0091E8006DEAA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2159F5512D0091E8006DEAA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		2159F5532D0091E8006DEAA7 /* MenuHomepageVC 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuHomepageVC 2.swift"; sourceTree = "<group>"; };
 		2159F55C2D0091EF006DEAA7 /* UIKit_MealMenuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKit_MealMenuUITests.swift; sourceTree = "<group>"; };
 		2159F55D2D0091EF006DEAA7 /* UIKit_MealMenuUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKit_MealMenuUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2159F5612D0091EF006DEAA7 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
-		2159F5642D009592006DEAA7 /* MenuDetailVC 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuDetailVC 2.swift"; sourceTree = "<group>"; };
 		219F4D9E2D6ECC30003DADB6 /* SavedMeal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SavedMeal.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -183,8 +179,6 @@
 				213581C82D7D6F4700FCDF50 /* MenuHomepageVC.swift */,
 				210584EE2D78538900951D14 /* MenuBookmarkVC.swift */,
 				213581C72D7D6F4700FCDF50 /* MenuDetailVC.swift */,
-				2159F5532D0091E8006DEAA7 /* MenuHomepageVC 2.swift */,
-				2159F5642D009592006DEAA7 /* MenuDetailVC 2.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -421,9 +415,7 @@
 				213581C92D7D6F4700FCDF50 /* MenuDetailVC.swift in Sources */,
 				213581CA2D7D6F4700FCDF50 /* MenuHomepageVC.swift in Sources */,
 				210585202D7D586900951D14 /* NetworkService.swift in Sources */,
-				2159F5572D0091E8006DEAA7 /* MenuHomepageVC 2.swift in Sources */,
 				210585162D7D56FE00951D14 /* Menu.swift in Sources */,
-				2159F5652D009592006DEAA7 /* MenuDetailVC 2.swift in Sources */,
 				219F4D9F2D6ECC30003DADB6 /* SavedMeal.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

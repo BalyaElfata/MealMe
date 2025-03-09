@@ -2,7 +2,9 @@ import UIKit
 
 class MenuHomepageVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     private let searchController = UISearchController()
-    private var viewModel: MenuViewModel!
+    
+//    private var viewModel: MenuViewModel!
+    private var menuData: [Menu] = []
     private var filteredMenuData: [Menu] = []
     private var selectedLabels: [String] = []
 
@@ -23,22 +25,38 @@ class MenuHomepageVC: UIViewController, UICollectionViewDataSource, UICollection
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         title = "Menu"
-
+        
+        setupBookmarkListButton() // delete
         setupSearchController()
         setupFilterButtons()
         setupCollectionView()
-
-        let networkService = NetworkService()
-        let menuRepository = DefaultMenuRepository(networkService: networkService)
-        let fetchMenusUseCase = DefaultFetchMenusUseCase(menuRepository: menuRepository)
-        viewModel = MenuViewModel(fetchMenusUseCase: fetchMenusUseCase)
-
+        
+//        let networkService = NetworkService()
+//        let menuRepository = DefaultMenuRepository(networkService: networkService)
+//        let fetchMenusUseCase = DefaultFetchMenusUseCase(menuRepository: menuRepository)
+//        viewModel = MenuViewModel(fetchMenusUseCase: fetchMenusUseCase)
+//        
+//        Task {
+//            await viewModel.fetchMenus()
+//            self.filteredMenuData = self.viewModel.menus
+//            DispatchQueue.main.async {
+//                self.setupFilterButtonsContent()
+//                self.collectionView.reloadData()
+//            }
+//        }
+        
         Task {
-            await viewModel.fetchMenus()
-            self.filteredMenuData = self.viewModel.menus
-            DispatchQueue.main.async {
-                self.setupFilterButtonsContent()
-                self.collectionView.reloadData()
+            do {
+                let menuService = MenuService()
+                let data = try await menuService.getMenus()
+                self.menuData = data.meals
+                self.filteredMenuData = self.menuData
+                DispatchQueue.main.async {
+                    self.setupFilterButtonsContent()
+                    self.collectionView.reloadData()
+                }
+            } catch {
+                print("Failed to fetch data: \(error)")
             }
         }
     }
@@ -178,7 +196,7 @@ extension MenuHomepageVC: UISearchResultsUpdating {
     }
     
     func setupFilterButtonsContent() {
-        let uniqueLabels = Set(self.viewModel.menus.map { $0.label }).sorted()
+        let uniqueLabels = Set(menuData.map { $0.label }).sorted()
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.spacing = 16
@@ -220,9 +238,9 @@ extension MenuHomepageVC: UISearchResultsUpdating {
     
     func applyFilters() {
         if selectedLabels.isEmpty {
-            filteredMenuData = self.viewModel.menus
+            filteredMenuData = menuData
         } else {
-            filteredMenuData = self.viewModel.menus.filter { selectedLabels.contains($0.label) }
+            filteredMenuData = menuData.filter { selectedLabels.contains($0.label) }
         }
         
         if let searchText = searchController.searchBar.text?.lowercased(), !searchText.isEmpty {
