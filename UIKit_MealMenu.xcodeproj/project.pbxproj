@@ -16,17 +16,17 @@
 		2105851E2D7D581C00951D14 /* FetchMenusUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2105851D2D7D581700951D14 /* FetchMenusUseCase.swift */; };
 		210585202D7D586900951D14 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2105851F2D7D586400951D14 /* NetworkService.swift */; };
 		210585222D7D589F00951D14 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210585212D7D589C00951D14 /* MenuViewModel.swift */; };
+		213581C62D7D6F3B00FCDF50 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213581C52D7D6F3B00FCDF50 /* SceneDelegate.swift */; };
+		213581C92D7D6F4700FCDF50 /* MenuDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213581C72D7D6F4700FCDF50 /* MenuDetailVC.swift */; };
+		213581CA2D7D6F4700FCDF50 /* MenuHomepageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213581C82D7D6F4700FCDF50 /* MenuHomepageVC.swift */; };
 		2159F5562D0091E8006DEAA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F54E2D0091E8006DEAA7 /* AppDelegate.swift */; };
-		2159F5572D0091E8006DEAA7 /* MenuHomepageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F5532D0091E8006DEAA7 /* MenuHomepageVC.swift */; };
-		2159F5582D0091E8006DEAA7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F5542D0091E8006DEAA7 /* SceneDelegate.swift */; };
+		2159F5572D0091E8006DEAA7 /* MenuHomepageVC 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F5532D0091E8006DEAA7 /* MenuHomepageVC 2.swift */; };
 		2159F5592D0091E8006DEAA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2159F54F2D0091E8006DEAA7 /* Assets.xcassets */; };
 		2159F55B2D0091E8006DEAA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2159F5522D0091E8006DEAA7 /* LaunchScreen.storyboard */; };
 		2159F55F2D0091EF006DEAA7 /* UIKit_MealMenuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F55C2D0091EF006DEAA7 /* UIKit_MealMenuUITests.swift */; };
 		2159F5602D0091EF006DEAA7 /* UIKit_MealMenuUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F55D2D0091EF006DEAA7 /* UIKit_MealMenuUITestsLaunchTests.swift */; };
 		2159F5632D0091EF006DEAA7 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F5612D0091EF006DEAA7 /* NetworkTests.swift */; };
-		2159F5652D009592006DEAA7 /* MenuDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F5642D009592006DEAA7 /* MenuDetailVC.swift */; };
-		2159F5672D00C461006DEAA7 /* MenuData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F5662D00C45B006DEAA7 /* MenuData.swift */; };
-		2159F5692D00C49C006DEAA7 /* MenuService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F5682D00C499006DEAA7 /* MenuService.swift */; };
+		2159F5652D009592006DEAA7 /* MenuDetailVC 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F5642D009592006DEAA7 /* MenuDetailVC 2.swift */; };
 		219F4D9F2D6ECC30003DADB6 /* SavedMeal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 219F4D9D2D6ECC30003DADB6 /* SavedMeal.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +57,9 @@
 		2105851D2D7D581700951D14 /* FetchMenusUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMenusUseCase.swift; sourceTree = "<group>"; };
 		2105851F2D7D586400951D14 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		210585212D7D589C00951D14 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		213581C52D7D6F3B00FCDF50 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		213581C72D7D6F4700FCDF50 /* MenuDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailVC.swift; sourceTree = "<group>"; };
+		213581C82D7D6F4700FCDF50 /* MenuHomepageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHomepageVC.swift; sourceTree = "<group>"; };
 		2159F51A2D008FBA006DEAA7 /* UIKit_MealMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKit_MealMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2159F5302D008FBC006DEAA7 /* UIKit_MealMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIKit_MealMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2159F53A2D008FBC006DEAA7 /* UIKit_MealMenuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIKit_MealMenuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,14 +67,11 @@
 		2159F54F2D0091E8006DEAA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2159F5502D0091E8006DEAA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2159F5512D0091E8006DEAA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		2159F5532D0091E8006DEAA7 /* MenuHomepageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHomepageVC.swift; sourceTree = "<group>"; };
-		2159F5542D0091E8006DEAA7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		2159F5532D0091E8006DEAA7 /* MenuHomepageVC 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuHomepageVC 2.swift"; sourceTree = "<group>"; };
 		2159F55C2D0091EF006DEAA7 /* UIKit_MealMenuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKit_MealMenuUITests.swift; sourceTree = "<group>"; };
 		2159F55D2D0091EF006DEAA7 /* UIKit_MealMenuUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKit_MealMenuUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2159F5612D0091EF006DEAA7 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
-		2159F5642D009592006DEAA7 /* MenuDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailVC.swift; sourceTree = "<group>"; };
-		2159F5662D00C45B006DEAA7 /* MenuData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuData.swift; sourceTree = "<group>"; };
-		2159F5682D00C499006DEAA7 /* MenuService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuService.swift; sourceTree = "<group>"; };
+		2159F5642D009592006DEAA7 /* MenuDetailVC 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuDetailVC 2.swift"; sourceTree = "<group>"; };
 		219F4D9E2D6ECC30003DADB6 /* SavedMeal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SavedMeal.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +130,8 @@
 		210585112D7D56A700951D14 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				2159F54E2D0091E8006DEAA7 /* AppDelegate.swift */,
+				213581C52D7D6F3B00FCDF50 /* SceneDelegate.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -178,6 +180,11 @@
 		210585192D7D57CB00951D14 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				213581C82D7D6F4700FCDF50 /* MenuHomepageVC.swift */,
+				210584EE2D78538900951D14 /* MenuBookmarkVC.swift */,
+				213581C72D7D6F4700FCDF50 /* MenuDetailVC.swift */,
+				2159F5532D0091E8006DEAA7 /* MenuHomepageVC 2.swift */,
+				2159F5642D009592006DEAA7 /* MenuDetailVC 2.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -218,13 +225,6 @@
 				210585102D7D56A100951D14 /* Data */,
 				2105850F2D7D569E00951D14 /* Domain */,
 				210584ED2D77D29100951D14 /* Models */,
-				2159F54E2D0091E8006DEAA7 /* AppDelegate.swift */,
-				2159F5542D0091E8006DEAA7 /* SceneDelegate.swift */,
-				2159F5532D0091E8006DEAA7 /* MenuHomepageVC.swift */,
-				210584EE2D78538900951D14 /* MenuBookmarkVC.swift */,
-				2159F5642D009592006DEAA7 /* MenuDetailVC.swift */,
-				2159F5662D00C45B006DEAA7 /* MenuData.swift */,
-				2159F5682D00C499006DEAA7 /* MenuService.swift */,
 				2159F54F2D0091E8006DEAA7 /* Assets.xcassets */,
 				2159F5502D0091E8006DEAA7 /* Info.plist */,
 				2159F5522D0091E8006DEAA7 /* LaunchScreen.storyboard */,
@@ -411,19 +411,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				210584C72D6ED5F500951D14 /* SavedMealItem+CoreDataClass.swift in Sources */,
+				213581C62D7D6F3B00FCDF50 /* SceneDelegate.swift in Sources */,
 				210584EF2D78539C00951D14 /* MenuBookmarkVC.swift in Sources */,
 				2105851E2D7D581C00951D14 /* FetchMenusUseCase.swift in Sources */,
 				210585222D7D589F00951D14 /* MenuViewModel.swift in Sources */,
 				210584C82D6ED5F500951D14 /* SavedMealItem+CoreDataProperties.swift in Sources */,
 				2159F5562D0091E8006DEAA7 /* AppDelegate.swift in Sources */,
 				2105851C2D7D57F600951D14 /* MenuRepository.swift in Sources */,
+				213581C92D7D6F4700FCDF50 /* MenuDetailVC.swift in Sources */,
+				213581CA2D7D6F4700FCDF50 /* MenuHomepageVC.swift in Sources */,
 				210585202D7D586900951D14 /* NetworkService.swift in Sources */,
-				2159F5572D0091E8006DEAA7 /* MenuHomepageVC.swift in Sources */,
+				2159F5572D0091E8006DEAA7 /* MenuHomepageVC 2.swift in Sources */,
 				210585162D7D56FE00951D14 /* Menu.swift in Sources */,
-				2159F5692D00C49C006DEAA7 /* MenuService.swift in Sources */,
-				2159F5652D009592006DEAA7 /* MenuDetailVC.swift in Sources */,
-				2159F5582D0091E8006DEAA7 /* SceneDelegate.swift in Sources */,
-				2159F5672D00C461006DEAA7 /* MenuData.swift in Sources */,
+				2159F5652D009592006DEAA7 /* MenuDetailVC 2.swift in Sources */,
 				219F4D9F2D6ECC30003DADB6 /* SavedMeal.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,7 +10,11 @@ import Foundation
 //    let measures: [String]
 //}
 
-struct Menu : Codable {
+struct MenuData: Codable {
+    let meals: [Menu]
+}
+
+struct Menu: Codable {
     enum CodingKeys: String, CodingKey {
         case name = "strMeal"
         case label = "strArea"
