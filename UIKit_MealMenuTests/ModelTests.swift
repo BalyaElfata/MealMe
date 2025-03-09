@@ -6,23 +6,49 @@
 //
 
 import XCTest
+import CoreData
+@testable import UIKit_MealMenu
 
 final class ModelTests: XCTestCase {
-
+    var testName: String!
+    var context: NSManagedObjectContext!
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        try super.setUpWithError()
+        testName = "Chicken Cordon Bleu"
+        context = {
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                fatalError("Unable to retrieve AppDelegate")
+            }
+            return appDelegate.persistentContainer.viewContext
+        }()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        testName = nil
+        context = nil
+        try super.tearDownWithError()
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func addSavedMealItem(name: String) throws {
+        let newMenu = SavedMealItem(context: context)
+        newMenu.name = name
+        try context.save()
+    }
+
+    func fetchSavedMealItem(name: String) throws -> [SavedMealItem] {
+        let fetchRequest = NSFetchRequest<SavedMealItem>(entityName: "SavedMealItem")
+        fetchRequest.predicate = NSPredicate(format: "name == %@", name)
+        return try context.fetch(fetchRequest)
+    }
+
+    func testAddAndFetchSavedMealItem() throws {
+        try addSavedMealItem(name: testName)
+        
+        let fetchedResults = try fetchSavedMealItem(name: testName)
+        
+        XCTAssertNotNil(fetchedResults)
+        XCTAssertEqual(fetchedResults.first?.name, testName)
     }
 
     func testPerformanceExample() throws {
@@ -31,5 +57,4 @@ final class ModelTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
 }
