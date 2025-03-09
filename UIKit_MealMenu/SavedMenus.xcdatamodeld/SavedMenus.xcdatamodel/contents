@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23605" systemVersion="24D70" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
-    <entity name="SavedMealItem" representedClassName="SavedMealItem" syncable="YES">
+    <entity name="SavedMenu" representedClassName="SavedMenu" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
-    <fetchRequest name="FetchRequest" entity="SavedMealItem" predicateString="name CONTAINS &quot;&quot;"/>
+    <fetchRequest name="FetchRequest" entity="SavedMenu" predicateString="name CONTAINS &quot;&quot;"/>
 </model>

@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		210584C72D6ED5F500951D14 /* SavedMealItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210584C52D6ED5F500951D14 /* SavedMealItem+CoreDataClass.swift */; };
-		210584C82D6ED5F500951D14 /* SavedMealItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210584C62D6ED5F500951D14 /* SavedMealItem+CoreDataProperties.swift */; };
+		210584C72D6ED5F500951D14 /* SavedMenu+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210584C52D6ED5F500951D14 /* SavedMenu+CoreDataClass.swift */; };
+		210584C82D6ED5F500951D14 /* SavedMenu+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210584C62D6ED5F500951D14 /* SavedMenu+CoreDataProperties.swift */; };
 		210584EF2D78539C00951D14 /* MenuBookmarkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210584EE2D78538900951D14 /* MenuBookmarkVC.swift */; };
 		2105850D2D7D3E6600951D14 /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2105850C2D7D3E6600951D14 /* ModelTests.swift */; };
 		210585162D7D56FE00951D14 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210585152D7D56FD00951D14 /* Menu.swift */; };
@@ -25,7 +25,7 @@
 		2159F55F2D0091EF006DEAA7 /* UIKit_MealMenuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F55C2D0091EF006DEAA7 /* UIKit_MealMenuUITests.swift */; };
 		2159F5602D0091EF006DEAA7 /* UIKit_MealMenuUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F55D2D0091EF006DEAA7 /* UIKit_MealMenuUITestsLaunchTests.swift */; };
 		2159F5632D0091EF006DEAA7 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F5612D0091EF006DEAA7 /* NetworkTests.swift */; };
-		219F4D9F2D6ECC30003DADB6 /* SavedMeal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 219F4D9D2D6ECC30003DADB6 /* SavedMeal.xcdatamodeld */; };
+		219F4D9F2D6ECC30003DADB6 /* SavedMenus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 219F4D9D2D6ECC30003DADB6 /* SavedMenus.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,8 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		210584C52D6ED5F500951D14 /* SavedMealItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedMealItem+CoreDataClass.swift"; sourceTree = "<group>"; };
-		210584C62D6ED5F500951D14 /* SavedMealItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedMealItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		210584C52D6ED5F500951D14 /* SavedMenu+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedMenu+CoreDataClass.swift"; sourceTree = "<group>"; };
+		210584C62D6ED5F500951D14 /* SavedMenu+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedMenu+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		210584EE2D78538900951D14 /* MenuBookmarkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBookmarkVC.swift; sourceTree = "<group>"; };
 		2105850C2D7D3E6600951D14 /* ModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
 		210585152D7D56FD00951D14 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 		2159F55C2D0091EF006DEAA7 /* UIKit_MealMenuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKit_MealMenuUITests.swift; sourceTree = "<group>"; };
 		2159F55D2D0091EF006DEAA7 /* UIKit_MealMenuUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKit_MealMenuUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2159F5612D0091EF006DEAA7 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
-		219F4D9E2D6ECC30003DADB6 /* SavedMeal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SavedMeal.xcdatamodel; sourceTree = "<group>"; };
+		219F4D9E2D6ECC30003DADB6 /* SavedMenus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SavedMenus.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +99,8 @@
 		210584ED2D77D29100951D14 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				210584C52D6ED5F500951D14 /* SavedMealItem+CoreDataClass.swift */,
-				210584C62D6ED5F500951D14 /* SavedMealItem+CoreDataProperties.swift */,
+				210584C52D6ED5F500951D14 /* SavedMenu+CoreDataClass.swift */,
+				210584C62D6ED5F500951D14 /* SavedMenu+CoreDataProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -222,7 +222,7 @@
 				2159F54F2D0091E8006DEAA7 /* Assets.xcassets */,
 				2159F5502D0091E8006DEAA7 /* Info.plist */,
 				2159F5522D0091E8006DEAA7 /* LaunchScreen.storyboard */,
-				219F4D9D2D6ECC30003DADB6 /* SavedMeal.xcdatamodeld */,
+				219F4D9D2D6ECC30003DADB6 /* SavedMenus.xcdatamodeld */,
 			);
 			path = UIKit_MealMenu;
 			sourceTree = "<group>";
@@ -404,19 +404,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				210584C72D6ED5F500951D14 /* SavedMealItem+CoreDataClass.swift in Sources */,
+				210584C72D6ED5F500951D14 /* SavedMenu+CoreDataClass.swift in Sources */,
 				213581C62D7D6F3B00FCDF50 /* SceneDelegate.swift in Sources */,
 				210584EF2D78539C00951D14 /* MenuBookmarkVC.swift in Sources */,
 				2105851E2D7D581C00951D14 /* FetchMenusUseCase.swift in Sources */,
 				210585222D7D589F00951D14 /* MenuViewModel.swift in Sources */,
-				210584C82D6ED5F500951D14 /* SavedMealItem+CoreDataProperties.swift in Sources */,
+				210584C82D6ED5F500951D14 /* SavedMenu+CoreDataProperties.swift in Sources */,
 				2159F5562D0091E8006DEAA7 /* AppDelegate.swift in Sources */,
 				2105851C2D7D57F600951D14 /* MenuRepository.swift in Sources */,
 				213581C92D7D6F4700FCDF50 /* MenuDetailVC.swift in Sources */,
 				213581CA2D7D6F4700FCDF50 /* MenuHomepageVC.swift in Sources */,
 				210585202D7D586900951D14 /* NetworkService.swift in Sources */,
 				210585162D7D56FE00951D14 /* Menu.swift in Sources */,
-				219F4D9F2D6ECC30003DADB6 /* SavedMeal.xcdatamodeld in Sources */,
+				219F4D9F2D6ECC30003DADB6 /* SavedMenus.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -754,13 +754,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		219F4D9D2D6ECC30003DADB6 /* SavedMeal.xcdatamodeld */ = {
+		219F4D9D2D6ECC30003DADB6 /* SavedMenus.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				219F4D9E2D6ECC30003DADB6 /* SavedMeal.xcdatamodel */,
+				219F4D9E2D6ECC30003DADB6 /* SavedMenus.xcdatamodel */,
 			);
-			currentVersion = 219F4D9E2D6ECC30003DADB6 /* SavedMeal.xcdatamodel */;
-			path = SavedMeal.xcdatamodeld;
+			currentVersion = 219F4D9E2D6ECC30003DADB6 /* SavedMenus.xcdatamodel */;
+			path = SavedMenus.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

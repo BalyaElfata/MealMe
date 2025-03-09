@@ -120,7 +120,7 @@ class MenuDetailVC: UIViewController {
     
     func setupBookmarkButton() {
         if let menuName = menu?.name {
-            let fetchRequest: NSFetchRequest<SavedMealItem> = SavedMealItem.fetchRequest()
+            let fetchRequest: NSFetchRequest<SavedMenu> = SavedMenu.fetchRequest()
             fetchRequest.predicate = NSPredicate(format: "name == %@", menuName)
             
             do {
@@ -148,13 +148,13 @@ class MenuDetailVC: UIViewController {
     
     @objc func handleBookmarkButton() {
         if let menuName = menu?.name {
-            let fetchRequest: NSFetchRequest<SavedMealItem> = SavedMealItem.fetchRequest()
+            let fetchRequest: NSFetchRequest<SavedMenu> = SavedMenu.fetchRequest()
             fetchRequest.predicate = NSPredicate(format: "name == %@", menuName)
             
             do {
                 let items = try context.fetch(fetchRequest)
                 if items.isEmpty {
-                    let newMenu = SavedMealItem(context: context)
+                    let newMenu = SavedMenu(context: context)
                     newMenu.name = menu?.name
                     self.navigationItem.setRightBarButton(
                         UIBarButtonItem(

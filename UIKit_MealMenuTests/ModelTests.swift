@@ -31,13 +31,13 @@ final class ModelTests: XCTestCase {
     }
 
     func addSavedMealItem(name: String) throws {
-        let newMenu = SavedMealItem(context: context)
+        let newMenu = SavedMenu(context: context)
         newMenu.name = name
         try context.save()
     }
 
-    func fetchSavedMealItem(name: String) throws -> [SavedMealItem] {
-        let fetchRequest = NSFetchRequest<SavedMealItem>(entityName: "SavedMealItem")
+    func fetchSavedMealItem(name: String) throws -> [SavedMenu] {
+        let fetchRequest = NSFetchRequest<SavedMenu>(entityName: "SavedMealItem")
         fetchRequest.predicate = NSPredicate(format: "name == %@", name)
         return try context.fetch(fetchRequest)
     }

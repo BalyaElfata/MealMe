@@ -2,7 +2,7 @@ import UIKit
 import CoreData
 
 class MenuBookmarkVC: UIViewController, UITableViewDataSource {
-    private var menus = [SavedMealItem]()
+    private var menus = [SavedMenu]()
     let context: NSManagedObjectContext = {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             fatalError("Unable to retrieve AppDelegate")
@@ -33,7 +33,7 @@ class MenuBookmarkVC: UIViewController, UITableViewDataSource {
     
     func getAllMenus() {
         do {
-            menus = try context.fetch(SavedMealItem.fetchRequest())
+            menus = try context.fetch(SavedMenu.fetchRequest())
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -43,7 +43,7 @@ class MenuBookmarkVC: UIViewController, UITableViewDataSource {
     }
     
     func addMenu(name: String) {
-        let newMenu = SavedMealItem(context: context)
+        let newMenu = SavedMenu(context: context)
         newMenu.name = name
         
         do {
@@ -54,7 +54,7 @@ class MenuBookmarkVC: UIViewController, UITableViewDataSource {
         }
     }
     
-    func deleteMenu(menu: SavedMealItem) {
+    func deleteMenu(menu: SavedMenu) {
         context.delete(menu)
         
         do {
