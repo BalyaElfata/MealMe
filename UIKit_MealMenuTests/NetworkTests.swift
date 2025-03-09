@@ -11,6 +11,8 @@ import XCTest
 final class NetworkTests: XCTestCase {
     var urlString: String!
     var url: URL!
+    var youtubeUrlString: String!
+    var youtubeUrl: URL!
 
     override func setUpWithError() throws {
         try super.setUpWithError()
@@ -43,6 +45,13 @@ final class NetworkTests: XCTestCase {
         dataTask.resume()
         
         waitForExpectations(timeout: 10, handler: nil)
+    }
+    
+    func testYoutubeLink() throws {
+        youtubeUrlString = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        youtubeUrl = URL(string: youtubeUrlString)!
+        
+        XCTAssertTrue(UIApplication.shared.canOpenURL(youtubeUrl))
     }
 
     func testPerformanceExample() throws {
