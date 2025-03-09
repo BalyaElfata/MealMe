@@ -21,10 +21,28 @@ final class NetworkTests: XCTestCase {
     override func tearDownWithError() throws {
         urlString = nil
         url = nil
+        try super.tearDownWithError()
     }
 
-    func testExample() throws {
+    func testNetworkConnectivity() throws {
+        let expectation = self.expectation(description: "Fetching data from API")
         
+        let dataTask = URLSession.shared.dataTask(with: url) { data, response, error in
+            XCTAssertNil(error, "Error should be nil")
+            XCTAssertNotNil(data, "Data should not be nil")
+            
+            if let httpResponse = response as? HTTPURLResponse {
+                XCTAssertEqual(httpResponse.statusCode, 200, "HTTP response status code should be 200")
+            } else {
+                XCTFail("Response was not HTTPURLResponse")
+            }
+            
+            expectation.fulfill()
+        }
+        
+        dataTask.resume()
+        
+        waitForExpectations(timeout: 10, handler: nil)
     }
 
     func testPerformanceExample() throws {
@@ -33,5 +51,4 @@ final class NetworkTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
 }
