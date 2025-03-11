@@ -1,10 +1,8 @@
 import Foundation
 
 class NetworkService {
-    private let url = "https://www.themealdb.com/api/json/v1/1/search.php?s=chicken"
-
-    func getMenus() async throws -> MenuData {
-        guard let url = URL(string: url) else {
+    func fetchData(from urlString: String) async throws -> Data {
+        guard let url = URL(string: urlString) else {
             throw NetworkError.invalidURL
         }
 
@@ -14,12 +12,7 @@ class NetworkService {
             throw NetworkError.invalidResponse
         }
 
-        do {
-            let decoder = JSONDecoder()
-            return try decoder.decode(MenuData.self, from: data)
-        } catch {
-            throw NetworkError.invalidData
-        }
+        return data
     }
 }
 
