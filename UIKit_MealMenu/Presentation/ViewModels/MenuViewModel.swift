@@ -11,7 +11,7 @@ class MenuViewModel: ObservableObject {
     }
     
     @MainActor
-    func loadMenu(id: String) async {
+    func loadMenu() async {
         isLoading = true
         error = nil
         
