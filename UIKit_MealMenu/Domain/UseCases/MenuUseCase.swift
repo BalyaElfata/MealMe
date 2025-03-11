@@ -7,8 +7,8 @@ class MenuUseCase {
         self.menuRepository = menuRepository
     }
 
-    func getMenu() async throws -> Menu {
-        try await menuRepository.fetchMenu()
+    func getAllMenus() async throws -> [Menu] {
+        try await menuRepository.fetchAllMenus()
     }
     
     func getFormattedIngredients(from menu: Menu) -> [String] {

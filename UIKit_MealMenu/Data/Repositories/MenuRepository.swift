@@ -7,17 +7,13 @@ class MenuRepository {
         self.networkService = NetworkService()
     }
     
-    func fetchMenu() async throws -> Menu {
+    func fetchAllMenus() async throws -> [Menu] {
         let urlString = "https://www.themealdb.com/api/json/v1/1/search.php?s=chicken"
-        let data = try await networkService.fetchData(from: urlString)
         
+        let data = try await networkService.fetchData(from: urlString)
         let response = try JSONDecoder().decode(MenuResponse.self, from: data)
         
-        guard let menu = response.meals.first else {
-            throw MenuError.notFound
-        }
-        
-        return menu
+        return response.meals
     }
     
     enum MenuError: Error {

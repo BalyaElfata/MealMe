@@ -2,7 +2,7 @@ import Foundation
 
 class MenuViewModel: ObservableObject {
     private let useCase: MenuUseCase
-    @Published var menu: Menu?
+    @Published var menus: [Menu] = []
     @Published var isLoading = false
     @Published var error: Error?
     
@@ -16,7 +16,7 @@ class MenuViewModel: ObservableObject {
         error = nil
         
         do {
-            menu = try await useCase.getMenu()
+            menus = try await useCase.getAllMenus()
         } catch {
             self.error = error
         }
