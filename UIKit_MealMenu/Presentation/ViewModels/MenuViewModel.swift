@@ -1,21 +1,26 @@
-//import Foundation
-//
-//class MenuViewModel: ObservableObject {
-//    @Published var menus: [Menu] = []
-//    private let fetchMenusUseCase: FetchMenusUseCase
-//
-//    init(fetchMenusUseCase: FetchMenusUseCase) {
-//        self.fetchMenusUseCase = fetchMenusUseCase
-//    }
-//
-//    func fetchMenus() async {
-//        do {
-//            let menus = try await fetchMenusUseCase.execute()
-//            DispatchQueue.main.async {
-//                self.menus = menus
-//            }
-//        } catch {
-//            print("Failed to fetch menus: \(error)")
-//        }
-//    }
-//}
+import Foundation
+
+class MenuViewModel: ObservableObject {
+    private let useCase: MenuUseCase
+    @Published var menu: Menu?
+    @Published var isLoading = false
+    @Published var error: Error?
+    
+    init(useCase: MenuUseCase) {
+        self.useCase = useCase
+    }
+    
+    @MainActor
+    func loadMenu(id: String) async {
+        isLoading = true
+        error = nil
+        
+        do {
+            menu = try await useCase.getMenu()
+        } catch {
+            self.error = error
+        }
+        
+        isLoading = false
+    }
+}
