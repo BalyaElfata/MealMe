@@ -56,9 +56,9 @@
 		213581C82D7D6F4700FCDF50 /* MenuHomepageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHomepageVC.swift; sourceTree = "<group>"; };
 		213581CD2D8029D000FCDF50 /* SavedMenu+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedMenu+CoreDataClass.swift"; sourceTree = "<group>"; };
 		213581CE2D8029D000FCDF50 /* SavedMenu+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedMenu+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		2159F51A2D008FBA006DEAA7 /* UIKit_MealMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKit_MealMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2159F5302D008FBC006DEAA7 /* UIKit_MealMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIKit_MealMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2159F53A2D008FBC006DEAA7 /* UIKit_MealMenuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIKit_MealMenuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2159F51A2D008FBA006DEAA7 /* MealMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2159F5302D008FBC006DEAA7 /* MealMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2159F53A2D008FBC006DEAA7 /* MealMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2159F54E2D0091E8006DEAA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2159F54F2D0091E8006DEAA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2159F5502D0091E8006DEAA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -199,9 +199,9 @@
 		2159F51B2D008FBA006DEAA7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2159F51A2D008FBA006DEAA7 /* UIKit_MealMenu.app */,
-				2159F5302D008FBC006DEAA7 /* UIKit_MealMenuTests.xctest */,
-				2159F53A2D008FBC006DEAA7 /* UIKit_MealMenuUITests.xctest */,
+				2159F51A2D008FBA006DEAA7 /* MealMe.app */,
+				2159F5302D008FBC006DEAA7 /* MealMeTests.xctest */,
+				2159F53A2D008FBC006DEAA7 /* MealMeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -234,9 +234,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2159F5192D008FBA006DEAA7 /* UIKit_MealMenu */ = {
+		2159F5192D008FBA006DEAA7 /* MealMe */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2159F5432D008FBC006DEAA7 /* Build configuration list for PBXNativeTarget "UIKit_MealMenu" */;
+			buildConfigurationList = 2159F5432D008FBC006DEAA7 /* Build configuration list for PBXNativeTarget "MealMe" */;
 			buildPhases = (
 				2159F5162D008FBA006DEAA7 /* Sources */,
 				2159F5172D008FBA006DEAA7 /* Frameworks */,
@@ -247,16 +247,16 @@
 			);
 			dependencies = (
 			);
-			name = UIKit_MealMenu;
+			name = MealMe;
 			packageProductDependencies = (
 			);
 			productName = UIKit_MealMenu;
-			productReference = 2159F51A2D008FBA006DEAA7 /* UIKit_MealMenu.app */;
+			productReference = 2159F51A2D008FBA006DEAA7 /* MealMe.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2159F52F2D008FBC006DEAA7 /* UIKit_MealMenuTests */ = {
+		2159F52F2D008FBC006DEAA7 /* MealMeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2159F5482D008FBC006DEAA7 /* Build configuration list for PBXNativeTarget "UIKit_MealMenuTests" */;
+			buildConfigurationList = 2159F5482D008FBC006DEAA7 /* Build configuration list for PBXNativeTarget "MealMeTests" */;
 			buildPhases = (
 				2159F52C2D008FBC006DEAA7 /* Sources */,
 				2159F52D2D008FBC006DEAA7 /* Frameworks */,
@@ -267,16 +267,16 @@
 			dependencies = (
 				2159F5322D008FBC006DEAA7 /* PBXTargetDependency */,
 			);
-			name = UIKit_MealMenuTests;
+			name = MealMeTests;
 			packageProductDependencies = (
 			);
 			productName = UIKit_MealMenuTests;
-			productReference = 2159F5302D008FBC006DEAA7 /* UIKit_MealMenuTests.xctest */;
+			productReference = 2159F5302D008FBC006DEAA7 /* MealMeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2159F5392D008FBC006DEAA7 /* UIKit_MealMenuUITests */ = {
+		2159F5392D008FBC006DEAA7 /* MealMeUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2159F54B2D008FBC006DEAA7 /* Build configuration list for PBXNativeTarget "UIKit_MealMenuUITests" */;
+			buildConfigurationList = 2159F54B2D008FBC006DEAA7 /* Build configuration list for PBXNativeTarget "MealMeUITests" */;
 			buildPhases = (
 				2159F5362D008FBC006DEAA7 /* Sources */,
 				2159F5372D008FBC006DEAA7 /* Frameworks */,
@@ -287,11 +287,11 @@
 			dependencies = (
 				2159F53C2D008FBC006DEAA7 /* PBXTargetDependency */,
 			);
-			name = UIKit_MealMenuUITests;
+			name = MealMeUITests;
 			packageProductDependencies = (
 			);
 			productName = UIKit_MealMenuUITests;
-			productReference = 2159F53A2D008FBC006DEAA7 /* UIKit_MealMenuUITests.xctest */;
+			productReference = 2159F53A2D008FBC006DEAA7 /* MealMeUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -317,7 +317,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2159F5152D008FBA006DEAA7 /* Build configuration list for PBXProject "UIKit_MealMenu" */;
+			buildConfigurationList = 2159F5152D008FBA006DEAA7 /* Build configuration list for PBXProject "MealMe" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -331,9 +331,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2159F5192D008FBA006DEAA7 /* UIKit_MealMenu */,
-				2159F52F2D008FBC006DEAA7 /* UIKit_MealMenuTests */,
-				2159F5392D008FBC006DEAA7 /* UIKit_MealMenuUITests */,
+				2159F5192D008FBA006DEAA7 /* MealMe */,
+				2159F52F2D008FBC006DEAA7 /* MealMeTests */,
+				2159F5392D008FBC006DEAA7 /* MealMeUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -427,12 +427,12 @@
 /* Begin PBXTargetDependency section */
 		2159F5322D008FBC006DEAA7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2159F5192D008FBA006DEAA7 /* UIKit_MealMenu */;
+			target = 2159F5192D008FBA006DEAA7 /* MealMe */;
 			targetProxy = 2159F5312D008FBC006DEAA7 /* PBXContainerItemProxy */;
 		};
 		2159F53C2D008FBC006DEAA7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2159F5192D008FBA006DEAA7 /* UIKit_MealMenu */;
+			target = 2159F5192D008FBA006DEAA7 /* MealMe */;
 			targetProxy = 2159F53B2D008FBC006DEAA7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -639,7 +639,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UIKit_MealMenu.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/UIKit_MealMenu";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MealMe.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MealMe";
 			};
 			name = Debug;
 		};
@@ -658,7 +658,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UIKit_MealMenu.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/UIKit_MealMenu";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MealMe.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MealMe";
 			};
 			name = Release;
 		};
@@ -699,7 +699,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2159F5152D008FBA006DEAA7 /* Build configuration list for PBXProject "UIKit_MealMenu" */ = {
+		2159F5152D008FBA006DEAA7 /* Build configuration list for PBXProject "MealMe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2159F5462D008FBC006DEAA7 /* Debug */,
@@ -708,7 +708,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2159F5432D008FBC006DEAA7 /* Build configuration list for PBXNativeTarget "UIKit_MealMenu" */ = {
+		2159F5432D008FBC006DEAA7 /* Build configuration list for PBXNativeTarget "MealMe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2159F5442D008FBC006DEAA7 /* Debug */,
@@ -717,7 +717,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2159F5482D008FBC006DEAA7 /* Build configuration list for PBXNativeTarget "UIKit_MealMenuTests" */ = {
+		2159F5482D008FBC006DEAA7 /* Build configuration list for PBXNativeTarget "MealMeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2159F5492D008FBC006DEAA7 /* Debug */,
@@ -726,7 +726,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2159F54B2D008FBC006DEAA7 /* Build configuration list for PBXNativeTarget "UIKit_MealMenuUITests" */ = {
+		2159F54B2D008FBC006DEAA7 /* Build configuration list for PBXNativeTarget "MealMeUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2159F54C2D008FBC006DEAA7 /* Debug */,
