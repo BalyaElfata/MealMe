@@ -30,22 +30,22 @@ final class ModelTests: XCTestCase {
         try super.tearDownWithError()
     }
 
-    func addSavedMealItem(name: String) throws {
+    func addSavedMenu(name: String) throws {
         let newMenu = SavedMenu(context: context)
         newMenu.name = name
         try context.save()
     }
 
-    func fetchSavedMealItem(name: String) throws -> [SavedMenu] {
-        let fetchRequest = NSFetchRequest<SavedMenu>(entityName: "SavedMealItem")
+    func fetchSavedMenu(name: String) throws -> [SavedMenu] {
+        let fetchRequest = NSFetchRequest<SavedMenu>(entityName: "SavedMenu")
         fetchRequest.predicate = NSPredicate(format: "name == %@", name)
         return try context.fetch(fetchRequest)
     }
 
-    func testAddAndFetchSavedMealItem() throws {
-        try addSavedMealItem(name: testName)
+    func testAddAndFetchSavedMenu() throws {
+        try addSavedMenu(name: testName)
         
-        let fetchedResults = try fetchSavedMealItem(name: testName)
+        let fetchedResults = try fetchSavedMenu(name: testName)
         
         XCTAssertNotNil(fetchedResults)
         XCTAssertEqual(fetchedResults.first?.name, testName)
