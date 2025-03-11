@@ -1,5 +1,7 @@
 import Foundation
 import CoreData
 
-@objc(SavedMealItem)
-public class SavedMenu: NSManagedObject {}
+@objc(SavedMenu)
+public class SavedMenu: NSManagedObject {
+
+}
