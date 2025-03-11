@@ -81,17 +81,8 @@ extension MenuBookmarkVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let networkService = NetworkService()
-        Task {
-            do {
-                let data = try await networkService.getMenus()
-                if let selectedMenu = data.meals.first(where: { $0.name == menus[indexPath.row].name }) {
-                    let destinationViewController = MenuDetailVC(menu: selectedMenu)
-                    navigationController?.pushViewController(destinationViewController, animated: true)
-                }
-            } catch {
-                // handle error
-            }
-        }
+        
+//        let destinationViewController = MenuDetailVC(menu: selectedMenu)
+//        navigationController?.pushViewController(destinationViewController, animated: true)
     }
 }
