@@ -15,11 +15,6 @@ struct Menu: Codable {
     struct Ingredient: Codable {
         let name: String
         let measure: String
-        
-        init(name: String, measure: String) {
-            self.name = name
-            self.measure = measure
-        }
     }
     
     private enum CodingKeys: String, CodingKey {
