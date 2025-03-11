@@ -11,6 +11,7 @@ struct Menu: Codable {
     let instructions: String
     let youtubeLink: String
     var ingredients: [Ingredient]
+    var cookingTime: Int?
     
     struct Ingredient: Codable {
         let name: String
