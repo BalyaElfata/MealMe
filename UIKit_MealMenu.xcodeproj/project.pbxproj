@@ -190,8 +190,8 @@
 		2159F5112D008FBA006DEAA7 = {
 			isa = PBXGroup;
 			children = (
-				2159F5552D0091E8006DEAA7 /* UIKit_MealMenu */,
-				2159F5622D0091EF006DEAA7 /* UIKit_MealMenuTests */,
+				2159F5552D0091E8006DEAA7 /* MealMe */,
+				2159F5622D0091EF006DEAA7 /* MealMeTests */,
 				2159F51B2D008FBA006DEAA7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -206,7 +206,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2159F5552D0091E8006DEAA7 /* UIKit_MealMenu */ = {
+		2159F5552D0091E8006DEAA7 /* MealMe */ = {
 			isa = PBXGroup;
 			children = (
 				210585122D7D56B500951D14 /* Presentation */,
@@ -219,16 +219,16 @@
 				2159F5522D0091E8006DEAA7 /* LaunchScreen.storyboard */,
 				219F4D9D2D6ECC30003DADB6 /* SavedMenus.xcdatamodeld */,
 			);
-			path = UIKit_MealMenu;
+			path = MealMe;
 			sourceTree = "<group>";
 		};
-		2159F5622D0091EF006DEAA7 /* UIKit_MealMenuTests */ = {
+		2159F5622D0091EF006DEAA7 /* MealMeTests */ = {
 			isa = PBXGroup;
 			children = (
 				2159F5612D0091EF006DEAA7 /* NetworkTests.swift */,
 				2105850C2D7D3E6600951D14 /* ModelTests.swift */,
 			);
-			path = UIKit_MealMenuTests;
+			path = MealMeTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
