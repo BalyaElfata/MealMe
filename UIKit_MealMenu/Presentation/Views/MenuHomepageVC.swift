@@ -36,6 +36,7 @@ class MenuHomepageVC: UIViewController, UICollectionViewDataSource, UICollection
             menuData = viewModel.menus
             filteredMenuData = menuData
             collectionView.reloadData()
+            setupFilterButtonsContent()
         }
     }
     
