@@ -6,7 +6,7 @@ class MenuViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var error: Error?
     
-    init(useCase: MenuUseCase) {
+    init(useCase: MenuUseCase = MenuUseCase()) {
         self.useCase = useCase
     }
     

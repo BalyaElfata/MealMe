@@ -3,7 +3,7 @@ import Foundation
 class MenuUseCase {
     private let menuRepository: MenuRepository
 
-    init(menuRepository: MenuRepository) {
+    init(menuRepository: MenuRepository = MenuRepository()) {
         self.menuRepository = menuRepository
     }
 

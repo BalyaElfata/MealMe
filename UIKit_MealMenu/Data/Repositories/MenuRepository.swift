@@ -3,8 +3,8 @@ import Foundation
 class MenuRepository {
     private let networkService: NetworkService
     
-    init(networkService: NetworkService) {
-        self.networkService = networkService
+    init(networkService: NetworkService = NetworkService()) {
+        self.networkService = NetworkService()
     }
     
     func fetchMenu() async throws -> Menu {
