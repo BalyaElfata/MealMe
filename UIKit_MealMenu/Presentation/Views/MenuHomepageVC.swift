@@ -47,8 +47,8 @@ class MenuHomepageVC: UIViewController, UICollectionViewDataSource, UICollection
         
         Task {
             do {
-                let menuService = MenuService()
-                let data = try await menuService.getMenus()
+                let networkService = NetworkService()
+                let data = try await networkService.getMenus()
                 self.menuData = data.meals
                 self.filteredMenuData = self.menuData
                 DispatchQueue.main.async {
