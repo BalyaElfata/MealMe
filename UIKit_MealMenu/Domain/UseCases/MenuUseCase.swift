@@ -10,4 +10,8 @@ class MenuUseCase {
     func getMenu() async throws -> Menu {
         try await menuRepository.fetchMenu()
     }
+    
+    func getFormattedIngredients(from menu: Menu) -> [String] {
+        return menu.ingredients.map { "\($0.measure) \($0.name)" }
+    }
 }
