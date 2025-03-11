@@ -3,6 +3,8 @@ import CoreData
 
 class MenuBookmarkVC: UIViewController, UITableViewDataSource {
     private var menus = [SavedMenu]()
+    private var viewModel = MenuViewModel()
+    
     let context: NSManagedObjectContext = {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             fatalError("Unable to retrieve AppDelegate")
@@ -24,6 +26,10 @@ class MenuBookmarkVC: UIViewController, UITableViewDataSource {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.frame = view.bounds
+        
+        Task {
+            await viewModel.loadMenu()
+        }
     }
     
     override func beginAppearanceTransition(_ isAppearing: Bool, animated: Bool) {
@@ -81,8 +87,10 @@ extension MenuBookmarkVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        
-//        let destinationViewController = MenuDetailVC(menu: selectedMenu)
-//        navigationController?.pushViewController(destinationViewController, animated: true)
+        if let selectedMenu = viewModel.menus.first(where: { $0.name == menus[indexPath.row].name }) {
+            print(selectedMenu)
+            let destinationViewController = MenuDetailVC(menu: selectedMenu)
+            navigationController?.pushViewController(destinationViewController, animated: true)
+        }
     }
 }
