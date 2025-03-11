@@ -30,10 +30,12 @@ class MenuHomepageVC: UIViewController, UICollectionViewDataSource, UICollection
         setupSearchController()
         setupFilterButtons()
         setupCollectionView()
-        
         viewModel = MenuViewModel()
         Task {
             await viewModel.loadMenu()
+            menuData = viewModel.menus
+            filteredMenuData = menuData
+            collectionView.reloadData()
         }
     }
     
