@@ -1,6 +1,6 @@
-# UIKit Meal Menu
+# MealMe
 
-UIKit Meal Menu is an iOS application built with Clean Architecture that displays meals fetched from TheMealDB API. Users can search for meals, filter them by cuisine type, save their favorite meals, and view detailed cooking instructions.
+MealMe is a meal recipe iOS application built with Clean Architecture that displays meals fetched from TheMealDB API. Users can search for meals, filter them by cuisine type, save their favorite meals, and view detailed cooking instructions.
 
 ## Features
 
@@ -52,12 +52,12 @@ The project follows Clean Architecture principles with the following layers:
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/UIKit_MealMenu.git
+    git clone https://github.com/yourusername/MealMe.git
     ```
 2. Open the project in Xcode:
     ```sh
-    cd UIKit_MealMenu
-    open UIKit_MealMenu.xcodeproj
+    cd MealMe
+    open MealMe.xcodeproj
     ```
 3. Install SwiftLint (optional):
     ```sh
@@ -90,12 +90,12 @@ The project includes comprehensive tests:
 ### Unit Tests
 - `NetworkTests`: API connectivity and response validation
 - `ModelTests`: CoreData operations and model mapping
-- Located in [UIKit_MealMenuTests](http://_vscodecontentref_/1)
+- Located in [MealMeTests](http://_vscodecontentref_/1)
 
 To run the tests, select the test target in Xcode and press `Cmd+U`.
 
 ## Project Structure
-UIKit_MealMenu/ ├── App/ │ ├── AppDelegate.swift │ ├── SceneDelegate.swift │ └── DI/ ├── Domain/ │ ├── Entities/ │ └── UseCases/ ├── Data/ │ ├── Repositories/ │ └── Network/ ├── Presentation/ │ ├── ViewModels/ │ └── Views/ └── Resources/ └── Assets.xcassets/
+MealMe/ ├── App/ │ ├── AppDelegate.swift │ ├── SceneDelegate.swift │ └── DI/ ├── Domain/ │ ├── Entities/ │ └── UseCases/ ├── Data/ │ ├── Repositories/ │ └── Network/ ├── Presentation/ │ ├── ViewModels/ │ └── Views/ └── Resources/ └── Assets.xcassets/
 
 ## Contributing
 
