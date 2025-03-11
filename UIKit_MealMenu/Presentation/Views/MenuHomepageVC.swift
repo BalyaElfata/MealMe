@@ -3,7 +3,7 @@ import UIKit
 class MenuHomepageVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     private let searchController = UISearchController()
     
-//    private var viewModel: MenuViewModel!
+    private var viewModel: MenuViewModel!
     private var menuData: [Menu] = []
     private var filteredMenuData: [Menu] = []
     private var selectedLabels: [String] = []
@@ -31,33 +31,9 @@ class MenuHomepageVC: UIViewController, UICollectionViewDataSource, UICollection
         setupFilterButtons()
         setupCollectionView()
         
-//        let networkService = NetworkService()
-//        let menuRepository = DefaultMenuRepository(networkService: networkService)
-//        let fetchMenusUseCase = DefaultFetchMenusUseCase(menuRepository: menuRepository)
-//        viewModel = MenuViewModel(fetchMenusUseCase: fetchMenusUseCase)
-//        
-//        Task {
-//            await viewModel.fetchMenus()
-//            self.filteredMenuData = self.viewModel.menus
-//            DispatchQueue.main.async {
-//                self.setupFilterButtonsContent()
-//                self.collectionView.reloadData()
-//            }
-//        }
-        
+        viewModel = MenuViewModel()
         Task {
-            do {
-                let networkService = NetworkService()
-                let data = try await networkService.getMenus()
-                self.menuData = data.meals
-                self.filteredMenuData = self.menuData
-                DispatchQueue.main.async {
-                    self.setupFilterButtonsContent()
-                    self.collectionView.reloadData()
-                }
-            } catch {
-                print("Failed to fetch data: \(error)")
-            }
+            await viewModel.loadMenu()
         }
     }
     
