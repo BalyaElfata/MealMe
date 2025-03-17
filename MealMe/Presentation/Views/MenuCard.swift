@@ -23,9 +23,20 @@ class MenuCard: UIView {
     
     private let overlayView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.2)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
+    }()
+    
+    private let gradientLayer: CAGradientLayer = {
+        let gradient = CAGradientLayer()
+        gradient.colors = [
+            UIColor.clear.cgColor,
+            UIColor.black.withAlphaComponent(0.7).cgColor
+        ]
+        gradient.locations = [0.0, 1.0]
+        gradient.startPoint = CGPoint(x: 0.5, y: 0.0)
+        gradient.endPoint = CGPoint(x: 0.5, y: 1.0)
+        return gradient
     }()
     
     private let nameLabel: UILabel = {
@@ -124,6 +135,8 @@ class MenuCard: UIView {
         menuTimeView.addSubview(clockImageView)
         menuTimeView.addSubview(timeLabel)
         
+        overlayView.layer.insertSublayer(gradientLayer, at: 0)
+        
         NSLayoutConstraint.activate([
             containerView.topAnchor.constraint(equalTo: topAnchor),
             containerView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -159,6 +172,14 @@ class MenuCard: UIView {
             timeLabel.centerYAnchor.constraint(equalTo: menuTimeView.centerYAnchor),
             timeLabel.trailingAnchor.constraint(equalTo: menuTimeView.trailingAnchor)
         ])
+    }
+    
+    // MARK: - Layout
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        // Update gradient layer frame when view layout changes
+        gradientLayer.frame = overlayView.bounds
     }
     
     // MARK: - Configure
