@@ -176,7 +176,7 @@ extension MenuHomepageVC: UISearchBarDelegate, UISearchResultsUpdating {
         stackView.spacing = 16
         
         uniqueLabels.forEach { label in
-            let button = UIButton(type: .system)
+            let button = FilterButton(frame: .zero)
             button.setTitle(label, for: .normal)
             button.addTarget(self, action: #selector(filterButtonTapped(_:)), for: .touchUpInside)
             button.tag = uniqueLabels.firstIndex(of: label) ?? 0
