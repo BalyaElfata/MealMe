@@ -30,7 +30,7 @@ class MenuCard: UIView {
     
     private let nameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+        label.font = UIFont(name: "Poppins-SemiBold", size: 15)
         label.textColor = .white
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -39,7 +39,7 @@ class MenuCard: UIView {
     
     private let menuAreaLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        label.font = UIFont(name: "Poppins-Regular", size: 11)
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -62,7 +62,7 @@ class MenuCard: UIView {
     
     private let timeLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        label.font = UIFont(name: "Poppins-Regular", size: 11)
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
