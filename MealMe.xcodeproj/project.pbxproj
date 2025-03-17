@@ -26,6 +26,7 @@
 		219EDC622D880C0800B3C1E4 /* MenuCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219EDC612D880C0300B3C1E4 /* MenuCard.swift */; };
 		219EDC662D88494900B3C1E4 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 219EDC652D88494900B3C1E4 /* Poppins-SemiBold.ttf */; };
 		219EDC672D88494900B3C1E4 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 219EDC642D88494900B3C1E4 /* Poppins-Regular.ttf */; };
+		219EDC692D88D21500B3C1E4 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219EDC682D88D20F00B3C1E4 /* FilterButton.swift */; };
 		219F4D9F2D6ECC30003DADB6 /* SavedMenus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 219F4D9D2D6ECC30003DADB6 /* SavedMenus.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		219EDC612D880C0300B3C1E4 /* MenuCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCard.swift; sourceTree = "<group>"; };
 		219EDC642D88494900B3C1E4 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		219EDC652D88494900B3C1E4 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		219EDC682D88D20F00B3C1E4 /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
 		219F4D9E2D6ECC30003DADB6 /* SavedMenus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SavedMenus.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -178,6 +180,7 @@
 		210585192D7D57CB00951D14 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				219EDC682D88D20F00B3C1E4 /* FilterButton.swift */,
 				219EDC612D880C0300B3C1E4 /* MenuCard.swift */,
 				213581C82D7D6F4700FCDF50 /* MenuHomepageVC.swift */,
 				210584EE2D78538900951D14 /* MenuBookmarkVC.swift */,
@@ -416,6 +419,7 @@
 				213581CF2D8029D000FCDF50 /* SavedMenu+CoreDataClass.swift in Sources */,
 				213581D02D8029D000FCDF50 /* SavedMenu+CoreDataProperties.swift in Sources */,
 				219EDC622D880C0800B3C1E4 /* MenuCard.swift in Sources */,
+				219EDC692D88D21500B3C1E4 /* FilterButton.swift in Sources */,
 				2159F5562D0091E8006DEAA7 /* AppDelegate.swift in Sources */,
 				2105851C2D7D57F600951D14 /* MenuRepository.swift in Sources */,
 				213581C92D7D6F4700FCDF50 /* MenuDetailVC.swift in Sources */,
