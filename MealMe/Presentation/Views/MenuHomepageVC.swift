@@ -1,8 +1,7 @@
 import UIKit
 
-class MenuHomepageVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
+class MenuHomepageVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     private let searchController = UISearchController()
-    
     private var viewModel: MenuViewModel!
     private var menuData: [Menu] = []
     private var filteredMenuData: [Menu] = []
@@ -139,6 +138,9 @@ class MenuHomepageVC: UIViewController, UICollectionViewDataSource, UICollection
         let destinationViewController = MenuDetailVC(menu: selectedMenu)
         navigationController?.pushViewController(destinationViewController, animated: true)
     }
+}
+
+extension MenuHomepageVC: UISearchBarDelegate, UISearchResultsUpdating {
     
     func setupSearchController() {
         searchController.searchResultsUpdater = self
@@ -150,9 +152,7 @@ class MenuHomepageVC: UIViewController, UICollectionViewDataSource, UICollection
         self.definesPresentationContext = false
         self.navigationItem.hidesSearchBarWhenScrolling = false
     }
-}
-
-extension MenuHomepageVC: UISearchResultsUpdating {
+    
     func setupFilterButtons() {
         view.addSubview(filterButtonsScrollView)
         filterButtonsScrollView.translatesAutoresizingMaskIntoConstraints = false
