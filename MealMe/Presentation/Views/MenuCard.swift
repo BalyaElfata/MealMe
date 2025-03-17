@@ -3,112 +3,26 @@ import UIKit
 class MenuCard: UIView {
     
     // MARK: - UI Elements
-    
-    private let containerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        view.layer.cornerRadius = 16
-        view.clipsToBounds = true
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    private let menuImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-    
-    private let overlayView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    private let gradientLayer: CAGradientLayer = {
-        let gradient = CAGradientLayer()
-        gradient.colors = [
-            UIColor.clear.cgColor,
-            UIColor.black.withAlphaComponent(0.7).cgColor
-        ]
-        gradient.locations = [0.0, 1.0]
-        gradient.startPoint = CGPoint(x: 0.5, y: 0.0)
-        gradient.endPoint = CGPoint(x: 0.5, y: 1.0)
-        return gradient
-    }()
-    
-    private let nameLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: "Poppins-SemiBold", size: 15)
-        label.textColor = .white
-        label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private let menuAreaLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: "Poppins-Regular", size: 11)
-        label.textColor = .white
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private let menuTimeView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    private let clockImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "clock")
-        imageView.contentMode = .scaleAspectFit
-        imageView.tintColor = .white
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-    
-    private let timeLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: "Poppins-Regular", size: 11)
-        label.textColor = .white
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    // MARK: - Properties
-    
-    var foodTitle: String? {
-        didSet {
-            nameLabel.text = foodTitle
-        }
-    }
-    
-    var cuisineType: String? {
-        didSet {
-            menuAreaLabel.text = cuisineType
-        }
-    }
-    
-    var preparationTime: String? {
-        didSet {
-            timeLabel.text = preparationTime
-        }
-    }
-    
-    var foodImage: UIImage? {
-        didSet {
-            menuImageView.image = foodImage
-        }
-    }
+    private let containerView = UIView()
+    private let menuImageView = UIImageView()
+    private let overlayView = UIView()
+    private let gradientLayer = CAGradientLayer()
+    private let nameLabel = UILabel()
+    private let menuAreaLabel = UILabel()
+    private let menuTimeView = UIView()
+    private let clockImageView = UIImageView()
+    private let timeLabel = UILabel()
     
     // MARK: - Initialization
     
-    override init(frame: CGRect) {
+    init(title: String, cuisineType: String, preparationTime: String, image: UIImage? = nil) {
         super.init(frame: CGRect(x: 0, y: 0, width: 167, height: 170))
+        setupViews()
+        configure(with: title, cuisineType: cuisineType, preparationTime: preparationTime, image: image)
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setupViews()
     }
     
@@ -120,6 +34,46 @@ class MenuCard: UIView {
     // MARK: - Setup
     
     private func setupViews() {
+        containerView.backgroundColor = .white
+        containerView.layer.cornerRadius = 16
+        containerView.clipsToBounds = true
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        menuImageView.contentMode = .scaleAspectFill
+        menuImageView.clipsToBounds = true
+        menuImageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        overlayView.translatesAutoresizingMaskIntoConstraints = false
+        
+        gradientLayer.colors = [
+            UIColor.clear.cgColor,
+            UIColor.black.withAlphaComponent(0.7).cgColor
+        ]
+        gradientLayer.locations = [0.0, 1.0]
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
+        
+        nameLabel.font = UIFont(name: "Poppins-SemiBold", size: 15)
+        nameLabel.textColor = .white
+        nameLabel.numberOfLines = 0
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        menuAreaLabel.font = UIFont(name: "Poppins-Regular", size: 11)
+        menuAreaLabel.textColor = .white
+        menuAreaLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        menuTimeView.translatesAutoresizingMaskIntoConstraints = false
+        
+        clockImageView.image = UIImage(systemName: "clock")
+        clockImageView.contentMode = .scaleAspectFit
+        clockImageView.tintColor = .white
+        clockImageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        timeLabel.font = UIFont(name: "Poppins-Regular", size: 11)
+        timeLabel.textColor = .white
+        timeLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        // Shadow
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOffset = CGSize(width: 0, height: 2)
         layer.shadowRadius = 8
@@ -182,12 +136,21 @@ class MenuCard: UIView {
         gradientLayer.frame = overlayView.bounds
     }
     
-    // MARK: - Configure
+    // MARK: - Configuration
     
     func configure(with title: String, cuisineType: String, preparationTime: String, image: UIImage?) {
-        self.foodTitle = title
-        self.cuisineType = cuisineType
-        self.preparationTime = preparationTime
-        self.foodImage = image
+        nameLabel.text = title
+        menuAreaLabel.text = cuisineType
+        timeLabel.text = preparationTime
+        menuImageView.image = image
+    }
+    
+    // Setter for food image that triggers layout update
+    var foodImage: UIImage? {
+        get { return menuImageView.image }
+        set {
+            menuImageView.image = newValue
+            setNeedsLayout()
+        }
     }
 }

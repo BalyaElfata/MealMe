@@ -101,7 +101,6 @@ extension MenuHomepageVC: UICollectionViewDataSource, UICollectionViewDelegateFl
                     if let image = UIImage(data: data) {
                         DispatchQueue.main.async {
                             menuCard.foodImage = image
-                            menuCard.setNeedsLayout()
                         }
                     }
                 }
