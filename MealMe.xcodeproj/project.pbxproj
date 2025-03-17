@@ -212,12 +212,12 @@
 		2159F5552D0091E8006DEAA7 /* MealMe */ = {
 			isa = PBXGroup;
 			children = (
+				219EDC632D88482D00B3C1E4 /* Resources */,
 				210585122D7D56B500951D14 /* Presentation */,
 				210585112D7D56A700951D14 /* App */,
 				210585102D7D56A100951D14 /* Data */,
 				2105850F2D7D569E00951D14 /* Domain */,
 				210584ED2D77D29100951D14 /* Models */,
-				2159F54F2D0091E8006DEAA7 /* Assets.xcassets */,
 				2159F5502D0091E8006DEAA7 /* Info.plist */,
 				2159F5522D0091E8006DEAA7 /* LaunchScreen.storyboard */,
 				219F4D9D2D6ECC30003DADB6 /* SavedMenus.xcdatamodeld */,
@@ -232,6 +232,14 @@
 				2105850C2D7D3E6600951D14 /* ModelTests.swift */,
 			);
 			path = MealMeTests;
+			sourceTree = "<group>";
+		};
+		219EDC632D88482D00B3C1E4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2159F54F2D0091E8006DEAA7 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
