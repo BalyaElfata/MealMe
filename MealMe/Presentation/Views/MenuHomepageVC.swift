@@ -63,8 +63,8 @@ class MenuHomepageVC: UIViewController, UICollectionViewDataSource, UICollection
         
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: filterButtonsScrollView.bottomAnchor, constant: 10),
-            collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
-            collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
@@ -83,63 +83,54 @@ class MenuHomepageVC: UIViewController, UICollectionViewDataSource, UICollection
         
         let menu = filteredMenuData[indexPath.row]
         
-        let menuImage = UIImageView()
+        let menuCard = MenuCard(frame: .zero)
+        menuCard.translatesAutoresizingMaskIntoConstraints = false
+        
+        menuCard.configure(
+            with: menu.name,
+            cuisineType: menu.label,
+            preparationTime: "\(menu.cookingTime ?? 30) mins",
+            image: nil
+        )
+        
         if let url = URL(string: menu.image) {
             DispatchQueue.global().async {
                 if let data = try? Data(contentsOf: url) {
                     if let image = UIImage(data: data) {
                         DispatchQueue.main.async {
-                            menuImage.image = image
+                            menuCard.foodImage = image
                         }
                     }
                 }
             }
         }
         
-        let menuName = UILabel()
-        menuName.text = menu.name
-        menuName.font = UIFont.boldSystemFont(ofSize: 16)
-        menuName.textAlignment = .center
-        
-        let menuLabel = UILabel()
-        menuLabel.text = menu.label
-        menuLabel.font = UIFont.systemFont(ofSize: 14)
-        menuLabel.textColor = .gray
-        menuLabel.textAlignment = .center
-        menuLabel.numberOfLines = 2
-        
-        let stackView = UIStackView(arrangedSubviews: [menuImage, menuName, menuLabel])
-        stackView.axis = .vertical
-        stackView.spacing = 8
-        stackView.alignment = .center
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        
-        cell.contentView.addSubview(stackView)
+        cell.contentView.addSubview(menuCard)
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 8),
-            stackView.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor, constant: 8),
-            stackView.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor, constant: -8),
-            stackView.bottomAnchor.constraint(lessThanOrEqualTo: cell.contentView.bottomAnchor, constant: -8)
+            menuCard.topAnchor.constraint(equalTo: cell.contentView.topAnchor),
+            menuCard.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor),
+            menuCard.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor),
+            menuCard.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor)
         ])
-        
-        cell.contentView.layer.cornerRadius = 8
-        cell.contentView.layer.masksToBounds = true
-        cell.contentView.layer.borderColor = UIColor.systemGray4.cgColor
-        cell.contentView.layer.borderWidth = 1
         
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        let totalItemWidth: CGFloat = 167 * 2
+        let horizontalInset = max((collectionView.bounds.width - totalItemWidth) / 3, 0)
+        
+        return UIEdgeInsets(top: 10, left: horizontalInset, bottom: 10, right: horizontalInset)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 20
+    }
+    
     // MARK: - UICollectionViewDelegateFlowLayout Method
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let itemsPerRow: CGFloat = 2
-        let padding: CGFloat = 10
-        let totalPadding = padding * (itemsPerRow - 1)
-        let availableWidth = collectionView.frame.width - totalPadding
-        let itemHeight = UIScreen.main.bounds.size.height * 0.3
-        let itemWidth = availableWidth / itemsPerRow
-        return CGSize(width: itemWidth, height: itemHeight)
+        return CGSize(width: 167, height: 170)
     }
     
     // MARK: - UICollectionViewDelegate Method
@@ -192,8 +183,8 @@ extension MenuHomepageVC: UISearchResultsUpdating {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: filterButtonsScrollView.topAnchor),
-            stackView.leadingAnchor.constraint(equalTo: filterButtonsScrollView.leadingAnchor, constant: 10),
-            stackView.trailingAnchor.constraint(equalTo: filterButtonsScrollView.trailingAnchor, constant: -10),
+            stackView.leadingAnchor.constraint(equalTo: filterButtonsScrollView.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: filterButtonsScrollView.trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: filterButtonsScrollView.bottomAnchor),
             stackView.heightAnchor.constraint(equalTo: filterButtonsScrollView.heightAnchor)
         ])
