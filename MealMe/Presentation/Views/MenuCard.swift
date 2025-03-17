@@ -141,6 +141,7 @@ class MenuCard: UIView {
             overlayView.heightAnchor.constraint(equalTo: containerView.heightAnchor, multiplier: 0.5),
             
             nameLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
+            nameLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
             nameLabel.bottomAnchor.constraint(equalTo: menuAreaLabel.topAnchor, constant: -4),
             
             menuAreaLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
