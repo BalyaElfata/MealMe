@@ -23,6 +23,7 @@
 		2159F5592D0091E8006DEAA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2159F54F2D0091E8006DEAA7 /* Assets.xcassets */; };
 		2159F55B2D0091E8006DEAA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2159F5522D0091E8006DEAA7 /* LaunchScreen.storyboard */; };
 		2159F5632D0091EF006DEAA7 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F5612D0091EF006DEAA7 /* NetworkTests.swift */; };
+		219EDC622D880C0800B3C1E4 /* MenuCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219EDC612D880C0300B3C1E4 /* MenuCard.swift */; };
 		219F4D9F2D6ECC30003DADB6 /* SavedMenus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 219F4D9D2D6ECC30003DADB6 /* SavedMenus.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		2159F5502D0091E8006DEAA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2159F5512D0091E8006DEAA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2159F5612D0091EF006DEAA7 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
+		219EDC612D880C0300B3C1E4 /* MenuCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCard.swift; sourceTree = "<group>"; };
 		219F4D9E2D6ECC30003DADB6 /* SavedMenus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SavedMenus.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -172,6 +174,7 @@
 		210585192D7D57CB00951D14 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				219EDC612D880C0300B3C1E4 /* MenuCard.swift */,
 				213581C82D7D6F4700FCDF50 /* MenuHomepageVC.swift */,
 				210584EE2D78538900951D14 /* MenuBookmarkVC.swift */,
 				213581C72D7D6F4700FCDF50 /* MenuDetailVC.swift */,
@@ -396,6 +399,7 @@
 				210585222D7D589F00951D14 /* MenuViewModel.swift in Sources */,
 				213581CF2D8029D000FCDF50 /* SavedMenu+CoreDataClass.swift in Sources */,
 				213581D02D8029D000FCDF50 /* SavedMenu+CoreDataProperties.swift in Sources */,
+				219EDC622D880C0800B3C1E4 /* MenuCard.swift in Sources */,
 				2159F5562D0091E8006DEAA7 /* AppDelegate.swift in Sources */,
 				2105851C2D7D57F600951D14 /* MenuRepository.swift in Sources */,
 				213581C92D7D6F4700FCDF50 /* MenuDetailVC.swift in Sources */,
