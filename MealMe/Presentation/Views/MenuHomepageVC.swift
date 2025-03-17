@@ -1,6 +1,6 @@
 import UIKit
 
-class MenuHomepageVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class MenuHomepageVC: UIViewController {
     private let searchController = UISearchController()
     private var viewModel: MenuViewModel!
     private var menuData: [Menu] = []
@@ -50,7 +50,10 @@ class MenuHomepageVC: UIViewController, UICollectionViewDataSource, UICollection
         let destinationViewController = MenuBookmarkVC()
         navigationController?.pushViewController(destinationViewController, animated: true)
     }
-    
+}
+
+// Collection View
+extension MenuHomepageVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func setupCollectionView() {
         view.addSubview(collectionView)
         
@@ -140,6 +143,7 @@ class MenuHomepageVC: UIViewController, UICollectionViewDataSource, UICollection
     }
 }
 
+// Search Bar & Filter
 extension MenuHomepageVC: UISearchBarDelegate, UISearchResultsUpdating {
     
     func setupSearchController() {
