@@ -24,6 +24,8 @@
 		2159F55B2D0091E8006DEAA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2159F5522D0091E8006DEAA7 /* LaunchScreen.storyboard */; };
 		2159F5632D0091EF006DEAA7 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F5612D0091EF006DEAA7 /* NetworkTests.swift */; };
 		219EDC622D880C0800B3C1E4 /* MenuCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219EDC612D880C0300B3C1E4 /* MenuCard.swift */; };
+		219EDC662D88494900B3C1E4 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 219EDC652D88494900B3C1E4 /* Poppins-SemiBold.ttf */; };
+		219EDC672D88494900B3C1E4 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 219EDC642D88494900B3C1E4 /* Poppins-Regular.ttf */; };
 		219F4D9F2D6ECC30003DADB6 /* SavedMenus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 219F4D9D2D6ECC30003DADB6 /* SavedMenus.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +68,8 @@
 		2159F5512D0091E8006DEAA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2159F5612D0091EF006DEAA7 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
 		219EDC612D880C0300B3C1E4 /* MenuCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCard.swift; sourceTree = "<group>"; };
+		219EDC642D88494900B3C1E4 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		219EDC652D88494900B3C1E4 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		219F4D9E2D6ECC30003DADB6 /* SavedMenus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SavedMenus.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -237,6 +241,8 @@
 		219EDC632D88482D00B3C1E4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				219EDC642D88494900B3C1E4 /* Poppins-Regular.ttf */,
+				219EDC652D88494900B3C1E4 /* Poppins-SemiBold.ttf */,
 				2159F54F2D0091E8006DEAA7 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -356,6 +362,8 @@
 			files = (
 				2159F5592D0091E8006DEAA7 /* Assets.xcassets in Resources */,
 				2159F55B2D0091E8006DEAA7 /* LaunchScreen.storyboard in Resources */,
+				219EDC662D88494900B3C1E4 /* Poppins-SemiBold.ttf in Resources */,
+				219EDC672D88494900B3C1E4 /* Poppins-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
